@@ -1,0 +1,9 @@
+[35m[1mConsolidate compiler generated dependencies of target nav_logic[0m
+[35m[1mConsolidate compiler generated dependencies of target cam_driver[0m
+[ 25%] Built target cam_logic
+[ 37%] [32mBuilding CXX object CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/cam_driver.dir/src/world_to_img.cpp.o[0m
+[35m[1mConsolidate compiler generated dependencies of target nav_do[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/nav_do.dir/src/motorInfo_to_GPIO.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable nav_logic[0m
+[ 75%] Built target nav_logic

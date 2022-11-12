@@ -1,0 +1,121 @@
+[0.000000] (-) TimerEvent: {}
+[0.000190] (imgToMotor) JobQueued: {'identifier': 'imgToMotor', 'dependencies': OrderedDict()}
+[0.000279] (imgToMotor) JobStarted: {'identifier': 'imgToMotor'}
+[0.017975] (imgToMotor) JobProgress: {'identifier': 'imgToMotor', 'progress': 'cmake'}
+[0.018860] (imgToMotor) JobProgress: {'identifier': 'imgToMotor', 'progress': 'build'}
+[0.020145] (imgToMotor) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor', '--', '-j3', '-l3'], 'cwd': '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'parallels'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/parallels'), ('OLDPWD', '/home/parallels/ROS_Workspaces/boat_workspace/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2633'), ('SYSTEMD_EXEC_PID', '2941'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '47825'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'parallels'), ('JOURNAL_STREAM', '8:35060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'parallels'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/parallels-Parallels-Virtual-Platform:@/tmp/.ICE-unix/2915,unix/parallels-Parallels-Virtual-Platform:/tmp/.ICE-unix/2915'), ('INVOCATION_ID', '9ffc62e260f24331ab85d374c1d3b4f3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.MLS5U1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:4f17a3d6-6414-41b6-b9fe-418b4fa57daf'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.073397] (imgToMotor) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target cam_logic\x1b[0m\n'}
+[0.087955] (imgToMotor) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding CXX object CMakeFiles/cam_driver.dir/src/world_to_img.cpp.o\x1b[0m\n'}
+[0.094283] (imgToMotor) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o\x1b[0m\n'}
+[0.094601] (imgToMotor) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.o\x1b[0m\n'}
+[0.097255] (-) TimerEvent: {}
+[0.197644] (-) TimerEvent: {}
+[0.298050] (-) TimerEvent: {}
+[0.398450] (-) TimerEvent: {}
+[0.498873] (-) TimerEvent: {}
+[0.599305] (-) TimerEvent: {}
+[0.699755] (-) TimerEvent: {}
+[0.800201] (-) TimerEvent: {}
+[0.900662] (-) TimerEvent: {}
+[1.001103] (-) TimerEvent: {}
+[1.101563] (-) TimerEvent: {}
+[1.202035] (-) TimerEvent: {}
+[1.305796] (-) TimerEvent: {}
+[1.406269] (-) TimerEvent: {}
+[1.506752] (-) TimerEvent: {}
+[1.607237] (-) TimerEvent: {}
+[1.707767] (-) TimerEvent: {}
+[1.808204] (-) TimerEvent: {}
+[1.908644] (-) TimerEvent: {}
+[2.010971] (-) TimerEvent: {}
+[2.111613] (-) TimerEvent: {}
+[2.212061] (-) TimerEvent: {}
+[2.312545] (-) TimerEvent: {}
+[2.413037] (-) TimerEvent: {}
+[2.513495] (-) TimerEvent: {}
+[2.613990] (-) TimerEvent: {}
+[2.714456] (-) TimerEvent: {}
+[2.814925] (-) TimerEvent: {}
+[2.915535] (-) TimerEvent: {}
+[3.016197] (-) TimerEvent: {}
+[3.116785] (-) TimerEvent: {}
+[3.217279] (-) TimerEvent: {}
+[3.317791] (-) TimerEvent: {}
+[3.418284] (-) TimerEvent: {}
+[3.518791] (-) TimerEvent: {}
+[3.619282] (-) TimerEvent: {}
+[3.719812] (-) TimerEvent: {}
+[3.820319] (-) TimerEvent: {}
+[3.920838] (-) TimerEvent: {}
+[3.989769] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:18:3:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[KISO C++ forbids declaration of \xe2\x80\x98\x1b[01m\x1b[Kimg_to_dest\x1b[m\x1b[K\xe2\x80\x99 with no type [\x1b[01;31m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-fpermissive\x07-fpermissive\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.990412] (imgToMotor) StderrLine: {'line': b'   18 |   \x1b[01;31m\x1b[Kimg_to_dest\x1b[m\x1b[K()\n'}
+[3.990678] (imgToMotor) StderrLine: {'line': b'      |   \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[3.991647] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kint world_to_img::img_to_dest()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[3.991937] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:19:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Konly constructors take member initializers\n'}
+[3.992177] (imgToMotor) StderrLine: {'line': b'   19 |   : \x1b[01;31m\x1b[KNode\x1b[m\x1b[K("world_to_img")\n'}
+[3.992409] (imgToMotor) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[3.992638] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:22:3:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kno return statement in function returning non-void [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type\x07-Wreturn-type\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[3.992900] (imgToMotor) StderrLine: {'line': b'   22 |   \x1b[01;35m\x1b[K}\x1b[m\x1b[K\n'}
+[3.993133] (imgToMotor) StderrLine: {'line': b'      |   \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[4.020985] (-) TimerEvent: {}
+[4.121460] (-) TimerEvent: {}
+[4.221964] (-) TimerEvent: {}
+[4.322486] (-) TimerEvent: {}
+[4.422974] (-) TimerEvent: {}
+[4.523426] (-) TimerEvent: {}
+[4.567008] (imgToMotor) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/usr/include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33\x1b[m\x1b[K,\n'}
+[4.567432] (imgToMotor) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/11/bits/allocator.h:46\x1b[m\x1b[K,\n'}
+[4.567821] (imgToMotor) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/11/unordered_map:40\x1b[m\x1b[K,\n'}
+[4.568062] (imgToMotor) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/usr/include/c++/11/functional:61\x1b[m\x1b[K,\n'}
+[4.568268] (imgToMotor) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:4\x1b[m\x1b[K:\n'}
+[4.568473] (imgToMotor) StderrLine: {'line': b'/usr/include/c++/11/ext/new_allocator.h: In instantiation of \xe2\x80\x98\x1b[01m\x1b[Kvoid __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = world_to_img; _Args = {}; _Tp = world_to_img]\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.568699] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/alloc_traits.h:516:17:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstatic void std::allocator_traits<std::allocator<_Tp1> >::construct(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, _Up*, _Args&& ...) [with _Up = world_to_img; _Args = {}; _Tp = world_to_img; std::allocator_traits<std::allocator<_Tp1> >::allocator_type = std::allocator<world_to_img>]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.568918] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr_base.h:519:39:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstd::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {}; _Tp = world_to_img; _Alloc = std::allocator<world_to_img>; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.569127] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr_base.h:650:16:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstd::__shared_count<_Lp>::__shared_count(_Tp*&, std::_Sp_alloc_shared_tag<_Alloc>, _Args&& ...) [with _Tp = world_to_img; _Alloc = std::allocator<world_to_img>; _Args = {}; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.569330] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr_base.h:1342:14:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstd::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<world_to_img>; _Args = {}; _Tp = world_to_img; __gnu_cxx::_Lock_policy _Lp = __gnu_cxx::_S_atomic]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.569538] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:409:59:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<_Tp>::shared_ptr(std::_Sp_alloc_shared_tag<_Tp>, _Args&& ...) [with _Alloc = std::allocator<world_to_img>; _Args = {}; _Tp = world_to_img]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.569758] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:862:14:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = world_to_img; _Alloc = std::allocator<world_to_img>; _Args = {}]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.569988] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/bits/shared_ptr.h:878:39:\x1b[m\x1b[K   required from \xe2\x80\x98\x1b[01m\x1b[Kstd::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = world_to_img; _Args = {}]\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.570236] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:30:46:\x1b[m\x1b[K   required from here\n'}
+[4.570439] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/usr/include/c++/11/ext/new_allocator.h:162:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kuse of deleted function \xe2\x80\x98\x1b[01m\x1b[Kworld_to_img::world_to_img()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.570654] (imgToMotor) StderrLine: {'line': b'  162 |         { \x1b[01;31m\x1b[K::new((void *)__p) _Up(std::forward<_Args>(__args)...)\x1b[m\x1b[K; }\n'}
+[4.570857] (imgToMotor) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.571057] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:15:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kworld_to_img::world_to_img()\x1b[m\x1b[K\xe2\x80\x99 is implicitly deleted because the default definition would be ill-formed:\n'}
+[4.571260] (imgToMotor) StderrLine: {'line': b'   15 | class \x1b[01;36m\x1b[Kworld_to_img\x1b[m\x1b[K : public rclcpp::Node\n'}
+[4.571650] (imgToMotor) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.571904] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:15:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kno matching function for call to \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node()\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.572117] (imgToMotor) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28\x1b[m\x1b[K,\n'}
+[4.572324] (imgToMotor) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:22\x1b[m\x1b[K,\n'}
+[4.572527] (imgToMotor) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[4.572738] (imgToMotor) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/world_to_img.cpp:8\x1b[m\x1b[K:\n'}
+[4.572965] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1294:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node(const rclcpp::Node&, const string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.573166] (imgToMotor) StderrLine: {'line': b' 1294 |   \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[4.573387] (imgToMotor) StderrLine: {'line': b'      |   \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.573609] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:1294:3:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[4.573812] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:101:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node(const string&, const string&, const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.574010] (imgToMotor) StderrLine: {'line': b'  101 |   explicit \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[4.574218] (imgToMotor) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.574427] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:101:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 3 arguments, 0 provided\n'}
+[4.574635] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:89:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kcandidate: \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Node::Node(const string&, const rclcpp::NodeOptions&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.574862] (imgToMotor) StderrLine: {'line': b'   89 |   explicit \x1b[01;36m\x1b[KNode\x1b[m\x1b[K(\n'}
+[4.575070] (imgToMotor) StderrLine: {'line': b'      |            \x1b[01;36m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.575279] (imgToMotor) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/node.hpp:89:12:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  candidate expects 2 arguments, 0 provided\n'}
+[4.623554] (-) TimerEvent: {}
+[4.684015] (imgToMotor) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/cam_driver.dir/build.make:76: CMakeFiles/cam_driver.dir/src/world_to_img.cpp.o] Error 1\n'}
+[4.684988] (imgToMotor) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/cam_driver.dir/all] Error 2\n'}
+[4.685262] (imgToMotor) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[4.769087] (-) TimerEvent: {}
+[4.869636] (-) TimerEvent: {}
+[4.970130] (-) TimerEvent: {}
+[5.043844] (imgToMotor) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX executable nav_logic\x1b[0m\n'}
+[5.070297] (-) TimerEvent: {}
+[5.101976] (imgToMotor) StdoutLine: {'line': b'[ 62%] \x1b[32m\x1b[1mLinking CXX executable cam_logic\x1b[0m\n'}
+[5.170525] (-) TimerEvent: {}
+[5.231835] (imgToMotor) StdoutLine: {'line': b'[ 62%] Built target nav_logic\n'}
+[5.270711] (-) TimerEvent: {}
+[5.275136] (imgToMotor) StdoutLine: {'line': b'[ 62%] Built target cam_logic\n'}
+[5.276845] (imgToMotor) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.279850] (imgToMotor) CommandEnded: {'returncode': 2}
+[5.371567] (-) TimerEvent: {}
+[5.372443] (imgToMotor) JobEnded: {'identifier': 'imgToMotor', 'rc': 2}
+[5.373494] (-) EventReactorShutdown: {}

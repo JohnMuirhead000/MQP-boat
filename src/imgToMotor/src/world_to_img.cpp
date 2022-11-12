@@ -15,7 +15,7 @@ using namespace std::chrono_literals;
 class world_to_img : public rclcpp::Node
 {
 public:
-  img_to_dest()
+  world_to_img()
   : Node("world_to_img")
   {
     

@@ -12,10 +12,10 @@ using namespace std::chrono_literals;
 /* This example creates a subclass of Node and uses std::bind() to register a
  * member function as a callback from the timer. */
 
-class nav_implement : public rclcpp::Node
+class motorInfo_to_GPIO : public rclcpp::Node
 {
 public:
-  nav_implement()
+  motorInfo_to_GPIO()
   : Node("nav_implement")
   {
     
@@ -27,7 +27,7 @@ private:
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<nav_implement>());
+  rclcpp::spin(std::make_shared<motorInfo_to_GPIO>());
   rclcpp::shutdown();
   return 0;
 }

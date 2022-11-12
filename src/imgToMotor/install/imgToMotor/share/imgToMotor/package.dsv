@@ -1,0 +1,5 @@
+source;share/imgToMotor/local_setup.bash
+source;share/imgToMotor/local_setup.dsv
+source;share/imgToMotor/local_setup.ps1
+source;share/imgToMotor/local_setup.sh
+source;share/imgToMotor/local_setup.zsh

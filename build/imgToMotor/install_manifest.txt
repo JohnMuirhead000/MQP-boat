@@ -1,3 +1,7 @@
+/home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/cam_driver
+/home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/cam_logic
+/home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/nav_logic
+/home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/nav_do
 /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/ament_index/resource_index/package_run_dependencies/imgToMotor
 /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/ament_index/resource_index/parent_prefix_path/imgToMotor
 /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/environment/ament_prefix_path.sh

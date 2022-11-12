@@ -1,0 +1,41 @@
+[0.015s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor -- -j3 -l3
+[0.078s] [ 12%] [32mBuilding CXX object CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.o[0m
+[0.079s] [ 37%] [32mBuilding CXX object CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o[0m
+[0.079s] [ 37%] [32mBuilding CXX object CMakeFiles/cam_driver.dir/src/world_to_img.cpp.o[0m
+[4.199s] [ 50%] [32m[1mLinking CXX executable cam_logic[0m
+[4.246s] [ 62%] [32m[1mLinking CXX executable nav_logic[0m
+[4.358s] [ 62%] Built target cam_logic
+[4.382s] [35m[1mConsolidate compiler generated dependencies of target nav_do[0m
+[4.408s] [ 75%] [32mBuilding CXX object CMakeFiles/nav_do.dir/src/motorInfo_to_GPIO.cpp.o[0m
+[4.447s] [ 75%] Built target nav_logic
+[4.501s] [ 87%] [32m[1mLinking CXX executable cam_driver[0m
+[4.634s] [ 87%] Built target cam_driver
+[7.793s] [100%] [32m[1mLinking CXX executable nav_do[0m
+[7.930s] [100%] Built target nav_do
+[7.943s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor -- -j3 -l3
+[8.000s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor
+[8.012s] -- Install configuration: ""
+[8.013s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/cam_driver
+[8.014s] -- Set runtime path of "/home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/cam_driver" to ""
+[8.014s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/cam_logic
+[8.016s] -- Set runtime path of "/home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/cam_logic" to ""
+[8.016s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/nav_logic
+[8.017s] -- Set runtime path of "/home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/nav_logic" to ""
+[8.017s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/nav_do
+[8.017s] -- Set runtime path of "/home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/lib/imgToMotor/nav_do" to ""
+[8.017s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/ament_index/resource_index/package_run_dependencies/imgToMotor
+[8.018s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/ament_index/resource_index/parent_prefix_path/imgToMotor
+[8.018s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/environment/ament_prefix_path.sh
+[8.018s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/environment/ament_prefix_path.dsv
+[8.018s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/environment/path.sh
+[8.018s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/environment/path.dsv
+[8.019s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/local_setup.bash
+[8.019s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/local_setup.sh
+[8.019s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/local_setup.zsh
+[8.019s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/local_setup.dsv
+[8.019s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/package.dsv
+[8.019s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/ament_index/resource_index/packages/imgToMotor
+[8.019s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/cmake/imgToMotorConfig.cmake
+[8.019s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/cmake/imgToMotorConfig-version.cmake
+[8.020s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/imgToMotor/share/imgToMotor/package.xml
+[8.022s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor

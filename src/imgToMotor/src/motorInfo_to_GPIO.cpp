@@ -16,7 +16,7 @@ class nav_implement : public rclcpp::Node
 {
 public:
   nav_implement()
-  : Node("nav_implement"), count_(0)
+  : Node("nav_implement")
   {
     
   }

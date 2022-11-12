@@ -16,7 +16,7 @@ class img_to_dest : public rclcpp::Node
 {
 public:
   img_to_dest()
-  : Node("img_to_dest"), count_(0)
+  : Node("img_to_dest")
   {
     
   }

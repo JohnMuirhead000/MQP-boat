@@ -1,0 +1,17 @@
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/cam_driver
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/cam_logic
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/package_run_dependencies/vision
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/parent_prefix_path/vision
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/ament_prefix_path.sh
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/ament_prefix_path.dsv
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/path.sh
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/path.dsv
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.bash
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.sh
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.zsh
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.dsv
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/package.dsv
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/packages/vision
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/cmake/visionConfig.cmake
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/cmake/visionConfig-version.cmake
+/home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/package.xml

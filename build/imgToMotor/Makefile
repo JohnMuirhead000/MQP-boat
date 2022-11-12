@@ -197,6 +197,154 @@ imgToMotor_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgToMotor_uninstall.dir/build.make CMakeFiles/imgToMotor_uninstall.dir/build
 .PHONY : imgToMotor_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named cam_driver
+
+# Build rule for target.
+cam_driver: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cam_driver
+.PHONY : cam_driver
+
+# fast build rule for target.
+cam_driver/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/build
+.PHONY : cam_driver/fast
+
+#=============================================================================
+# Target rules for targets named cam_logic
+
+# Build rule for target.
+cam_logic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cam_logic
+.PHONY : cam_logic
+
+# fast build rule for target.
+cam_logic/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/build
+.PHONY : cam_logic/fast
+
+#=============================================================================
+# Target rules for targets named nav_logic
+
+# Build rule for target.
+nav_logic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nav_logic
+.PHONY : nav_logic
+
+# fast build rule for target.
+nav_logic/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_logic.dir/build.make CMakeFiles/nav_logic.dir/build
+.PHONY : nav_logic/fast
+
+#=============================================================================
+# Target rules for targets named nav_do
+
+# Build rule for target.
+nav_do: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nav_do
+.PHONY : nav_do
+
+# fast build rule for target.
+nav_do/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_do.dir/build.make CMakeFiles/nav_do.dir/build
+.PHONY : nav_do/fast
+
+src/dest_to_motorInfo.o: src/dest_to_motorInfo.cpp.o
+.PHONY : src/dest_to_motorInfo.o
+
+# target to build an object file
+src/dest_to_motorInfo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_logic.dir/build.make CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.o
+.PHONY : src/dest_to_motorInfo.cpp.o
+
+src/dest_to_motorInfo.i: src/dest_to_motorInfo.cpp.i
+.PHONY : src/dest_to_motorInfo.i
+
+# target to preprocess a source file
+src/dest_to_motorInfo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_logic.dir/build.make CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.i
+.PHONY : src/dest_to_motorInfo.cpp.i
+
+src/dest_to_motorInfo.s: src/dest_to_motorInfo.cpp.s
+.PHONY : src/dest_to_motorInfo.s
+
+# target to generate assembly for a file
+src/dest_to_motorInfo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_logic.dir/build.make CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.s
+.PHONY : src/dest_to_motorInfo.cpp.s
+
+src/img_to_destination.o: src/img_to_destination.cpp.o
+.PHONY : src/img_to_destination.o
+
+# target to build an object file
+src/img_to_destination.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o
+.PHONY : src/img_to_destination.cpp.o
+
+src/img_to_destination.i: src/img_to_destination.cpp.i
+.PHONY : src/img_to_destination.i
+
+# target to preprocess a source file
+src/img_to_destination.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.i
+.PHONY : src/img_to_destination.cpp.i
+
+src/img_to_destination.s: src/img_to_destination.cpp.s
+.PHONY : src/img_to_destination.s
+
+# target to generate assembly for a file
+src/img_to_destination.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.s
+.PHONY : src/img_to_destination.cpp.s
+
+src/motorInfo_to_GPIO.o: src/motorInfo_to_GPIO.cpp.o
+.PHONY : src/motorInfo_to_GPIO.o
+
+# target to build an object file
+src/motorInfo_to_GPIO.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_do.dir/build.make CMakeFiles/nav_do.dir/src/motorInfo_to_GPIO.cpp.o
+.PHONY : src/motorInfo_to_GPIO.cpp.o
+
+src/motorInfo_to_GPIO.i: src/motorInfo_to_GPIO.cpp.i
+.PHONY : src/motorInfo_to_GPIO.i
+
+# target to preprocess a source file
+src/motorInfo_to_GPIO.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_do.dir/build.make CMakeFiles/nav_do.dir/src/motorInfo_to_GPIO.cpp.i
+.PHONY : src/motorInfo_to_GPIO.cpp.i
+
+src/motorInfo_to_GPIO.s: src/motorInfo_to_GPIO.cpp.s
+.PHONY : src/motorInfo_to_GPIO.s
+
+# target to generate assembly for a file
+src/motorInfo_to_GPIO.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_do.dir/build.make CMakeFiles/nav_do.dir/src/motorInfo_to_GPIO.cpp.s
+.PHONY : src/motorInfo_to_GPIO.cpp.s
+
+src/world_to_img.o: src/world_to_img.cpp.o
+.PHONY : src/world_to_img.o
+
+# target to build an object file
+src/world_to_img.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/src/world_to_img.cpp.o
+.PHONY : src/world_to_img.cpp.o
+
+src/world_to_img.i: src/world_to_img.cpp.i
+.PHONY : src/world_to_img.i
+
+# target to preprocess a source file
+src/world_to_img.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/src/world_to_img.cpp.i
+.PHONY : src/world_to_img.cpp.i
+
+src/world_to_img.s: src/world_to_img.cpp.s
+.PHONY : src/world_to_img.s
+
+# target to generate assembly for a file
+src/world_to_img.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/src/world_to_img.cpp.s
+.PHONY : src/world_to_img.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +360,22 @@ help:
 	@echo "... test"
 	@echo "... imgToMotor_uninstall"
 	@echo "... uninstall"
+	@echo "... cam_driver"
+	@echo "... cam_logic"
+	@echo "... nav_do"
+	@echo "... nav_logic"
+	@echo "... src/dest_to_motorInfo.o"
+	@echo "... src/dest_to_motorInfo.i"
+	@echo "... src/dest_to_motorInfo.s"
+	@echo "... src/img_to_destination.o"
+	@echo "... src/img_to_destination.i"
+	@echo "... src/img_to_destination.s"
+	@echo "... src/motorInfo_to_GPIO.o"
+	@echo "... src/motorInfo_to_GPIO.i"
+	@echo "... src/motorInfo_to_GPIO.s"
+	@echo "... src/world_to_img.o"
+	@echo "... src/world_to_img.i"
+	@echo "... src/world_to_img.s"
 .PHONY : help
 
 

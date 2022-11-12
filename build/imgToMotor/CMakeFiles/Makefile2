@@ -63,7 +63,10 @@ CMAKE_BINARY_DIR = /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMoto
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all:
+all: CMakeFiles/cam_driver.dir/all
+all: CMakeFiles/cam_logic.dir/all
+all: CMakeFiles/nav_logic.dir/all
+all: CMakeFiles/nav_do.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,6 +76,10 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/imgToMotor_uninstall.dir/clean
+clean: CMakeFiles/cam_driver.dir/clean
+clean: CMakeFiles/cam_logic.dir/clean
+clean: CMakeFiles/nav_logic.dir/clean
+clean: CMakeFiles/nav_do.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -126,6 +133,110 @@ imgToMotor_uninstall: CMakeFiles/imgToMotor_uninstall.dir/rule
 CMakeFiles/imgToMotor_uninstall.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/imgToMotor_uninstall.dir/build.make CMakeFiles/imgToMotor_uninstall.dir/clean
 .PHONY : CMakeFiles/imgToMotor_uninstall.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/cam_driver.dir
+
+# All Build rule for target.
+CMakeFiles/cam_driver.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles --progress-num=1,2 "Built target cam_driver"
+.PHONY : CMakeFiles/cam_driver.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/cam_driver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cam_driver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles 0
+.PHONY : CMakeFiles/cam_driver.dir/rule
+
+# Convenience name for target.
+cam_driver: CMakeFiles/cam_driver.dir/rule
+.PHONY : cam_driver
+
+# clean rule for target.
+CMakeFiles/cam_driver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/clean
+.PHONY : CMakeFiles/cam_driver.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/cam_logic.dir
+
+# All Build rule for target.
+CMakeFiles/cam_logic.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles --progress-num=3,4 "Built target cam_logic"
+.PHONY : CMakeFiles/cam_logic.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/cam_logic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cam_logic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles 0
+.PHONY : CMakeFiles/cam_logic.dir/rule
+
+# Convenience name for target.
+cam_logic: CMakeFiles/cam_logic.dir/rule
+.PHONY : cam_logic
+
+# clean rule for target.
+CMakeFiles/cam_logic.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/clean
+.PHONY : CMakeFiles/cam_logic.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/nav_logic.dir
+
+# All Build rule for target.
+CMakeFiles/nav_logic.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_logic.dir/build.make CMakeFiles/nav_logic.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_logic.dir/build.make CMakeFiles/nav_logic.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles --progress-num=7,8 "Built target nav_logic"
+.PHONY : CMakeFiles/nav_logic.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/nav_logic.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nav_logic.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles 0
+.PHONY : CMakeFiles/nav_logic.dir/rule
+
+# Convenience name for target.
+nav_logic: CMakeFiles/nav_logic.dir/rule
+.PHONY : nav_logic
+
+# clean rule for target.
+CMakeFiles/nav_logic.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_logic.dir/build.make CMakeFiles/nav_logic.dir/clean
+.PHONY : CMakeFiles/nav_logic.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/nav_do.dir
+
+# All Build rule for target.
+CMakeFiles/nav_do.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_do.dir/build.make CMakeFiles/nav_do.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_do.dir/build.make CMakeFiles/nav_do.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles --progress-num=5,6 "Built target nav_do"
+.PHONY : CMakeFiles/nav_do.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/nav_do.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nav_do.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles 0
+.PHONY : CMakeFiles/nav_do.dir/rule
+
+# Convenience name for target.
+nav_do: CMakeFiles/nav_do.dir/rule
+.PHONY : nav_do
+
+# clean rule for target.
+CMakeFiles/nav_do.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_do.dir/build.make CMakeFiles/nav_do.dir/clean
+.PHONY : CMakeFiles/nav_do.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

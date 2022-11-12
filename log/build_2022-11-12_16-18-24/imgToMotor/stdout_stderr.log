@@ -1,0 +1,31 @@
+-- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.1 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.3 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.3 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.0 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.1 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+WARNING: Package name "imgToMotor" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor
+[ 12%] [32mBuilding CXX object CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/cam_driver.dir/src/world_to_img.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.o[0m
+[01m[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/img_to_destination.cpp:[m[K In constructor ‘[01m[Kimg_to_dest::img_to_dest()[m[K’:
+[01m[K/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor/src/img_to_destination.cpp:19:26:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[Kimg_to_dest[m[K’ does not have any field named ‘[01m[Kcount_[m[K’
+   19 |   : Node("img_to_dest"), [01;31m[Kcount_[m[K(0)
+      |                          [01;31m[K^~~~~~[m[K
+gmake[2]: *** [CMakeFiles/cam_logic.dir/build.make:76: CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:169: CMakeFiles/cam_logic.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 50%] [32m[1mLinking CXX executable nav_logic[0m
+[ 62%] [32m[1mLinking CXX executable cam_driver[0m
+[ 62%] Built target cam_driver
+[ 62%] Built target nav_logic
+gmake: *** [Makefile:146: all] Error 2

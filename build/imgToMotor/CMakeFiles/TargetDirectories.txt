@@ -1,5 +1,9 @@
 /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/uninstall.dir
 /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/imgToMotor_uninstall.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/cam_driver.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/cam_logic.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/nav_logic.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/nav_do.dir
 /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/test.dir
 /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/edit_cache.dir
 /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor/CMakeFiles/rebuild_cache.dir

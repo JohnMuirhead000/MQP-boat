@@ -1,0 +1,25 @@
+[35m[1mConsolidate compiler generated dependencies of target NetFinder[0m
+[ 50%] Built target camera
+[ 75%] [32mBuilding CXX object CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o[0m
+[100%] [32m[1mLinking CXX executable NetFinder[0m
+[100%] Built target NetFinder
+-- Install configuration: ""
+-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/camera
+-- Set runtime path of "/home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/camera" to ""
+-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/NetFinder
+-- Set runtime path of "/home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/NetFinder" to ""
+-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/package_run_dependencies/vision
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/parent_prefix_path/vision
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/ament_prefix_path.sh
+-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/path.sh
+-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/path.dsv
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.bash
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.sh
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.zsh
+-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.dsv
+-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/package.dsv
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/packages/vision
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/cmake/visionConfig.cmake
+-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/cmake/visionConfig-version.cmake
+-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/package.xml

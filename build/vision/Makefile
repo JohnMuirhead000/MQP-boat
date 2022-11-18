@@ -198,78 +198,78 @@ vision_uninstall/fast:
 .PHONY : vision_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named cam_driver
+# Target rules for targets named NetFinder
 
 # Build rule for target.
-cam_driver: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cam_driver
-.PHONY : cam_driver
+NetFinder: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NetFinder
+.PHONY : NetFinder
 
 # fast build rule for target.
-cam_driver/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/build
-.PHONY : cam_driver/fast
+NetFinder/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/build
+.PHONY : NetFinder/fast
 
 #=============================================================================
-# Target rules for targets named cam_logic
+# Target rules for targets named camera
 
 # Build rule for target.
-cam_logic: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cam_logic
-.PHONY : cam_logic
+camera: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera
+.PHONY : camera
 
 # fast build rule for target.
-cam_logic/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/build
-.PHONY : cam_logic/fast
+camera/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/build
+.PHONY : camera/fast
 
-src/img_to_destination.o: src/img_to_destination.cpp.o
-.PHONY : src/img_to_destination.o
-
-# target to build an object file
-src/img_to_destination.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o
-.PHONY : src/img_to_destination.cpp.o
-
-src/img_to_destination.i: src/img_to_destination.cpp.i
-.PHONY : src/img_to_destination.i
-
-# target to preprocess a source file
-src/img_to_destination.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.i
-.PHONY : src/img_to_destination.cpp.i
-
-src/img_to_destination.s: src/img_to_destination.cpp.s
-.PHONY : src/img_to_destination.s
-
-# target to generate assembly for a file
-src/img_to_destination.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.s
-.PHONY : src/img_to_destination.cpp.s
-
-src/world_to_img.o: src/world_to_img.cpp.o
-.PHONY : src/world_to_img.o
+src/NetFinder.o: src/NetFinder.cpp.o
+.PHONY : src/NetFinder.o
 
 # target to build an object file
-src/world_to_img.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/src/world_to_img.cpp.o
-.PHONY : src/world_to_img.cpp.o
+src/NetFinder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o
+.PHONY : src/NetFinder.cpp.o
 
-src/world_to_img.i: src/world_to_img.cpp.i
-.PHONY : src/world_to_img.i
+src/NetFinder.i: src/NetFinder.cpp.i
+.PHONY : src/NetFinder.i
 
 # target to preprocess a source file
-src/world_to_img.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/src/world_to_img.cpp.i
-.PHONY : src/world_to_img.cpp.i
+src/NetFinder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/src/NetFinder.cpp.i
+.PHONY : src/NetFinder.cpp.i
 
-src/world_to_img.s: src/world_to_img.cpp.s
-.PHONY : src/world_to_img.s
+src/NetFinder.s: src/NetFinder.cpp.s
+.PHONY : src/NetFinder.s
 
 # target to generate assembly for a file
-src/world_to_img.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/src/world_to_img.cpp.s
-.PHONY : src/world_to_img.cpp.s
+src/NetFinder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/src/NetFinder.cpp.s
+.PHONY : src/NetFinder.cpp.s
+
+src/camera.o: src/camera.cpp.o
+.PHONY : src/camera.o
+
+# target to build an object file
+src/camera.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/src/camera.cpp.o
+.PHONY : src/camera.cpp.o
+
+src/camera.i: src/camera.cpp.i
+.PHONY : src/camera.i
+
+# target to preprocess a source file
+src/camera.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/src/camera.cpp.i
+.PHONY : src/camera.cpp.i
+
+src/camera.s: src/camera.cpp.s
+.PHONY : src/camera.s
+
+# target to generate assembly for a file
+src/camera.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/src/camera.cpp.s
+.PHONY : src/camera.cpp.s
 
 # Help Target
 help:
@@ -286,14 +286,14 @@ help:
 	@echo "... test"
 	@echo "... uninstall"
 	@echo "... vision_uninstall"
-	@echo "... cam_driver"
-	@echo "... cam_logic"
-	@echo "... src/img_to_destination.o"
-	@echo "... src/img_to_destination.i"
-	@echo "... src/img_to_destination.s"
-	@echo "... src/world_to_img.o"
-	@echo "... src/world_to_img.i"
-	@echo "... src/world_to_img.s"
+	@echo "... NetFinder"
+	@echo "... camera"
+	@echo "... src/NetFinder.o"
+	@echo "... src/NetFinder.i"
+	@echo "... src/NetFinder.s"
+	@echo "... src/camera.o"
+	@echo "... src/camera.i"
+	@echo "... src/camera.s"
 .PHONY : help
 
 

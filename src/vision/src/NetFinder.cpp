@@ -12,22 +12,21 @@ using namespace std::chrono_literals;
 /* This example creates a subclass of Node and uses std::bind() to register a
  * member function as a callback from the timer. */
 
-class img_to_destination : public rclcpp::Node
+class NetFinder : public rclcpp::Node
 {
 public:
-  img_to_destination()
-  : Node("img_to_destination")
+  NetFinder()
+  : Node("NetFinder")
   {
     
   }
 private:
-
 };
 
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<img_to_destination>());
+  rclcpp::spin(std::make_shared<NetFinder>());
   rclcpp::shutdown();
   return 0;
 }

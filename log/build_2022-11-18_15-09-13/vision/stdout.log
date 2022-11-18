@@ -1,0 +1,4 @@
+[35m[1mConsolidate compiler generated dependencies of target cam_logic[0m
+[35m[1mConsolidate compiler generated dependencies of target cam_driver[0m
+[ 50%] Built target cam_driver
+[ 75%] [32mBuilding CXX object CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o[0m

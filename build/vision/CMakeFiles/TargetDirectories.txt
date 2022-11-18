@@ -1,7 +1,7 @@
 /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/uninstall.dir
 /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/vision_uninstall.dir
-/home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/cam_driver.dir
-/home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/cam_logic.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/NetFinder.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/camera.dir
 /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/test.dir
 /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/edit_cache.dir
 /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,115 @@
+[0.000000] (-) TimerEvent: {}
+[0.000191] (navigation) JobQueued: {'identifier': 'navigation', 'dependencies': OrderedDict()}
+[0.000246] (vision) JobQueued: {'identifier': 'vision', 'dependencies': OrderedDict()}
+[0.000325] (navigation) JobStarted: {'identifier': 'navigation'}
+[0.016069] (vision) JobStarted: {'identifier': 'vision'}
+[0.021363] (navigation) JobProgress: {'identifier': 'navigation', 'progress': 'cmake'}
+[0.022183] (navigation) JobProgress: {'identifier': 'navigation', 'progress': 'build'}
+[0.025719] (navigation) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation', '--', '-j3', '-l3'], 'cwd': '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'parallels'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/parallels'), ('OLDPWD', '/home/parallels/ROS_Workspaces/boat_workspace/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2633'), ('SYSTEMD_EXEC_PID', '2941'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '564031'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'parallels'), ('JOURNAL_STREAM', '8:35060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'parallels'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/parallels-Parallels-Virtual-Platform:@/tmp/.ICE-unix/2915,unix/parallels-Parallels-Virtual-Platform:/tmp/.ICE-unix/2915'), ('INVOCATION_ID', '9ffc62e260f24331ab85d374c1d3b4f3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.MLS5U1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:db45aa45-423c-4305-931a-ea8e8ea07503'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.034285] (vision) JobProgress: {'identifier': 'vision', 'progress': 'cmake'}
+[0.035323] (vision) JobProgress: {'identifier': 'vision', 'progress': 'build'}
+[0.036245] (vision) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/parallels/ROS_Workspaces/boat_workspace/build/vision', '--', '-j3', '-l3'], 'cwd': '/home/parallels/ROS_Workspaces/boat_workspace/build/vision', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'parallels'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/parallels'), ('OLDPWD', '/home/parallels/ROS_Workspaces/boat_workspace/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2633'), ('SYSTEMD_EXEC_PID', '2941'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '564031'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'parallels'), ('JOURNAL_STREAM', '8:35060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'parallels'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/parallels-Parallels-Virtual-Platform:@/tmp/.ICE-unix/2915,unix/parallels-Parallels-Virtual-Platform:/tmp/.ICE-unix/2915'), ('INVOCATION_ID', '9ffc62e260f24331ab85d374c1d3b4f3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.MLS5U1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:db45aa45-423c-4305-931a-ea8e8ea07503'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/parallels/ROS_Workspaces/boat_workspace/build/vision'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.065863] (vision) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.090213] (navigation) StdoutLine: {'line': b'[100%] Built target nav_do\n'}
+[0.090412] (navigation) StdoutLine: {'line': b'[100%] Built target nav_logic\n'}
+[0.098009] (-) TimerEvent: {}
+[0.102294] (navigation) CommandEnded: {'returncode': 0}
+[0.144450] (navigation) JobProgress: {'identifier': 'navigation', 'progress': 'install'}
+[0.160372] (navigation) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation'], 'cwd': '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'parallels'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/parallels'), ('OLDPWD', '/home/parallels/ROS_Workspaces/boat_workspace/src'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '2633'), ('SYSTEMD_EXEC_PID', '2941'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '564031'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'parallels'), ('JOURNAL_STREAM', '8:35060'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'parallels'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/parallels-Parallels-Virtual-Platform:@/tmp/.ICE-unix/2915,unix/parallels-Parallels-Virtual-Platform:/tmp/.ICE-unix/2915'), ('INVOCATION_ID', '9ffc62e260f24331ab85d374c1d3b4f3'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.MLS5U1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:db45aa45-423c-4305-931a-ea8e8ea07503'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.163585] (navigation) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.163823] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/lib/navigation/nav_logic\n'}
+[0.164302] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/lib/navigation/nav_do\n'}
+[0.164564] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/ament_index/resource_index/package_run_dependencies/navigation\n'}
+[0.164778] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/ament_index/resource_index/parent_prefix_path/navigation\n'}
+[0.165078] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/environment/ament_prefix_path.sh\n'}
+[0.165349] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/environment/ament_prefix_path.dsv\n'}
+[0.165521] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/environment/path.sh\n'}
+[0.165862] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/environment/path.dsv\n'}
+[0.166036] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/local_setup.bash\n'}
+[0.166235] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/local_setup.sh\n'}
+[0.166480] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/local_setup.zsh\n'}
+[0.166570] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/local_setup.dsv\n'}
+[0.166650] (navigation) StdoutLine: {'line': b'-- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/package.dsv\n'}
+[0.166847] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/ament_index/resource_index/packages/navigation\n'}
+[0.167085] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/cmake/navigationConfig.cmake\n'}
+[0.167311] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/cmake/navigationConfig-version.cmake\n'}
+[0.167521] (navigation) StdoutLine: {'line': b'-- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation/share/navigation/package.xml\n'}
+[0.170194] (navigation) CommandEnded: {'returncode': 0}
+[0.198039] (-) TimerEvent: {}
+[0.230934] (vision) StdoutLine: {'line': b'-- Found rclcpp: 16.0.1 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.243210] (navigation) JobEnded: {'identifier': 'navigation', 'rc': 0}
+[0.274139] (vision) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.3 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.277758] (vision) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.286619] (vision) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.3 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.298511] (-) TimerEvent: {}
+[0.302109] (vision) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.323322] (vision) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.398756] (-) TimerEvent: {}
+[0.412853] (vision) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.0 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.414475] (vision) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.1 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.499454] (-) TimerEvent: {}
+[0.564975] (vision) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.600320] (-) TimerEvent: {}
+[0.700785] (-) TimerEvent: {}
+[0.813781] (-) TimerEvent: {}
+[0.890147] (vision) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.924231] (-) TimerEvent: {}
+[0.924451] (vision) StdoutLine: {'line': b'-- Generating done\n'}
+[0.926516] (vision) StdoutLine: {'line': b'-- Build files have been written to: /home/parallels/ROS_Workspaces/boat_workspace/build/vision\n'}
+[0.969857] (vision) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o\x1b[0m\n'}
+[0.970071] (vision) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/camera.dir/src/camera.cpp.o\x1b[0m\n'}
+[1.024368] (-) TimerEvent: {}
+[1.124776] (-) TimerEvent: {}
+[1.225256] (-) TimerEvent: {}
+[1.325666] (-) TimerEvent: {}
+[1.426738] (-) TimerEvent: {}
+[1.527067] (-) TimerEvent: {}
+[1.550347] (vision) StderrLine: {'line': b'\x1b[01m\x1b[K/home/parallels/ROS_Workspaces/boat_workspace/src/vision/src/NetFinder.cpp:9:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Ksensor_msgs.msg/Image: No such file or directory\n'}
+[1.550623] (vision) StderrLine: {'line': b'    9 | #include \x1b[01;31m\x1b[K"sensor_msgs.msg/Image"\x1b[m\x1b[K\n'}
+[1.550756] (vision) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.550841] (vision) StderrLine: {'line': b'compilation terminated.\n'}
+[1.555520] (vision) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/NetFinder.dir/build.make:76: CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o] Error 1\n'}
+[1.555938] (vision) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/NetFinder.dir/all] Error 2\n'}
+[1.556121] (vision) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[1.631420] (-) TimerEvent: {}
+[1.731827] (-) TimerEvent: {}
+[1.832915] (-) TimerEvent: {}
+[1.933369] (-) TimerEvent: {}
+[2.033973] (-) TimerEvent: {}
+[2.135793] (-) TimerEvent: {}
+[2.236664] (-) TimerEvent: {}
+[2.339246] (-) TimerEvent: {}
+[2.442719] (-) TimerEvent: {}
+[2.545008] (-) TimerEvent: {}
+[2.647945] (-) TimerEvent: {}
+[2.750158] (-) TimerEvent: {}
+[2.851126] (-) TimerEvent: {}
+[2.952085] (-) TimerEvent: {}
+[3.053203] (-) TimerEvent: {}
+[3.153764] (-) TimerEvent: {}
+[3.254306] (-) TimerEvent: {}
+[3.354901] (-) TimerEvent: {}
+[3.455877] (-) TimerEvent: {}
+[3.556225] (-) TimerEvent: {}
+[3.656642] (-) TimerEvent: {}
+[3.757182] (-) TimerEvent: {}
+[3.871132] (-) TimerEvent: {}
+[3.972062] (-) TimerEvent: {}
+[4.073179] (-) TimerEvent: {}
+[4.173684] (-) TimerEvent: {}
+[4.274876] (-) TimerEvent: {}
+[4.375657] (-) TimerEvent: {}
+[4.476728] (-) TimerEvent: {}
+[4.577614] (-) TimerEvent: {}
+[4.678130] (-) TimerEvent: {}
+[4.779036] (-) TimerEvent: {}
+[4.880111] (-) TimerEvent: {}
+[4.980587] (-) TimerEvent: {}
+[4.986732] (vision) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable camera\x1b[0m\n'}
+[5.080729] (-) TimerEvent: {}
+[5.182285] (-) TimerEvent: {}
+[5.206478] (vision) StdoutLine: {'line': b'[ 75%] Built target camera\n'}
+[5.208417] (vision) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.211099] (vision) CommandEnded: {'returncode': 2}
+[5.264978] (vision) JobEnded: {'identifier': 'vision', 'rc': 2}
+[5.266768] (-) EventReactorShutdown: {}

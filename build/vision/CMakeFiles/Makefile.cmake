@@ -590,6 +590,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
   "CMakeFiles/vision_uninstall.dir/DependInfo.cmake"
-  "CMakeFiles/cam_driver.dir/DependInfo.cmake"
-  "CMakeFiles/cam_logic.dir/DependInfo.cmake"
+  "CMakeFiles/NetFinder.dir/DependInfo.cmake"
+  "CMakeFiles/camera.dir/DependInfo.cmake"
   )

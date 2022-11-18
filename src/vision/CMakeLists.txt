@@ -16,15 +16,15 @@ find_package(std_msgs REQUIRED)
 
 
 # 
-add_executable(cam_driver src/world_to_img.cpp)
-ament_target_dependencies(cam_driver rclcpp std_msgs)
+add_executable(NetFinder src/NetFinder.cpp)
+ament_target_dependencies(NetFinder rclcpp std_msgs)
 
-add_executable(cam_logic src/img_to_destination.cpp)
-ament_target_dependencies(cam_logic rclcpp std_msgs)
+add_executable(camera src/camera.cpp)
+ament_target_dependencies(camera rclcpp std_msgs)
 
 install(TARGETS
-  cam_driver
-  cam_logic
+  camera
+  NetFinder
   DESTINATION lib/${PROJECT_NAME})
 
 

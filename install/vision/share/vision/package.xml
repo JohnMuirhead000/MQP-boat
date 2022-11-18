@@ -17,4 +17,5 @@
   </export>
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
+  <depend>sensor_msgs.msg/Image</depend>
 </package>

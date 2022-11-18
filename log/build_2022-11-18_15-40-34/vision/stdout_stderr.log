@@ -1,0 +1,8 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o[0m
+[ 75%] Built target camera
+[01m[K/home/parallels/ROS_Workspaces/boat_workspace/src/vision/src/NetFinder.cpp:24:3:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+   24 |   [01;31m[K{[m[K
+      |   [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/NetFinder.dir/build.make:76: CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/NetFinder.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -63,8 +63,8 @@ CMAKE_BINARY_DIR = /home/parallels/ROS_Workspaces/boat_workspace/build/vision
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/cam_driver.dir/all
-all: CMakeFiles/cam_logic.dir/all
+all: CMakeFiles/NetFinder.dir/all
+all: CMakeFiles/camera.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -74,8 +74,8 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/vision_uninstall.dir/clean
-clean: CMakeFiles/cam_driver.dir/clean
-clean: CMakeFiles/cam_logic.dir/clean
+clean: CMakeFiles/NetFinder.dir/clean
+clean: CMakeFiles/camera.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -131,56 +131,56 @@ CMakeFiles/vision_uninstall.dir/clean:
 .PHONY : CMakeFiles/vision_uninstall.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cam_driver.dir
+# Target rules for target CMakeFiles/NetFinder.dir
 
 # All Build rule for target.
-CMakeFiles/cam_driver.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles --progress-num=1,2 "Built target cam_driver"
-.PHONY : CMakeFiles/cam_driver.dir/all
+CMakeFiles/NetFinder.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles --progress-num=1,2 "Built target NetFinder"
+.PHONY : CMakeFiles/NetFinder.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cam_driver.dir/rule: cmake_check_build_system
+CMakeFiles/NetFinder.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cam_driver.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/NetFinder.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles 0
-.PHONY : CMakeFiles/cam_driver.dir/rule
+.PHONY : CMakeFiles/NetFinder.dir/rule
 
 # Convenience name for target.
-cam_driver: CMakeFiles/cam_driver.dir/rule
-.PHONY : cam_driver
+NetFinder: CMakeFiles/NetFinder.dir/rule
+.PHONY : NetFinder
 
 # clean rule for target.
-CMakeFiles/cam_driver.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_driver.dir/build.make CMakeFiles/cam_driver.dir/clean
-.PHONY : CMakeFiles/cam_driver.dir/clean
+CMakeFiles/NetFinder.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/clean
+.PHONY : CMakeFiles/NetFinder.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cam_logic.dir
+# Target rules for target CMakeFiles/camera.dir
 
 # All Build rule for target.
-CMakeFiles/cam_logic.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles --progress-num=3,4 "Built target cam_logic"
-.PHONY : CMakeFiles/cam_logic.dir/all
+CMakeFiles/camera.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles --progress-num=3,4 "Built target camera"
+.PHONY : CMakeFiles/camera.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/cam_logic.dir/rule: cmake_check_build_system
+CMakeFiles/camera.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cam_logic.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/camera.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/parallels/ROS_Workspaces/boat_workspace/build/vision/CMakeFiles 0
-.PHONY : CMakeFiles/cam_logic.dir/rule
+.PHONY : CMakeFiles/camera.dir/rule
 
 # Convenience name for target.
-cam_logic: CMakeFiles/cam_logic.dir/rule
-.PHONY : cam_logic
+camera: CMakeFiles/camera.dir/rule
+.PHONY : camera
 
 # clean rule for target.
-CMakeFiles/cam_logic.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cam_logic.dir/build.make CMakeFiles/cam_logic.dir/clean
-.PHONY : CMakeFiles/cam_logic.dir/clean
+CMakeFiles/camera.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/clean
+.PHONY : CMakeFiles/camera.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

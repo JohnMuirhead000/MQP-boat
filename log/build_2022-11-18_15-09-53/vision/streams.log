@@ -1,0 +1,9 @@
+[0.030s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3
+[0.160s] [ 50%] Built target cam_driver
+[0.166s] [ 75%] [32mBuilding CXX object CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o[0m
+[0.172s] [01m[Kcc1plus:[m[K [01;31m[Kfatal error: [m[K/home/parallels/ROS_Workspaces/boat_workspace/src/vision/src/img_to_destination.cpp: No such file or directory
+[0.172s] compilation terminated.
+[0.173s] gmake[2]: *** [CMakeFiles/cam_logic.dir/build.make:76: CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o] Error 1
+[0.173s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/cam_logic.dir/all] Error 2
+[0.174s] gmake: *** [Makefile:146: all] Error 2
+[0.176s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3

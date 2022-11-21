@@ -1,0 +1,10 @@
+[35m[1mConsolidate compiler generated dependencies of target NetFinder[0m
+gmake[2]: *** No rule to make target 'CMakeFiles/camera.dir/build'.  Stop.
+gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/camera.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** No rule to make target 'CMakeFiles/camera_debug.dir/build'.  Stop.
+gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/camera_debug.dir/all] Error 2
+[ 50%] [32mBuilding CXX object CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o[0m
+[100%] [32m[1mLinking CXX executable NetFinder[0m
+[100%] Built target NetFinder
+gmake: *** [Makefile:146: all] Error 2

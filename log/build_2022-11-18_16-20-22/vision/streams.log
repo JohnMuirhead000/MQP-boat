@@ -1,0 +1,12 @@
+[0.027s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3
+[0.068s] [35m[1mConsolidate compiler generated dependencies of target NetFinder[0m
+[0.083s] gmake[2]: *** No rule to make target 'CMakeFiles/camera.dir/build'.  Stop.
+[0.084s] gmake[1]: *** [CMakeFiles/Makefile2:167: CMakeFiles/camera.dir/all] Error 2
+[0.084s] gmake[1]: *** Waiting for unfinished jobs....
+[0.085s] gmake[2]: *** No rule to make target 'CMakeFiles/camera_debug.dir/build'.  Stop.
+[0.085s] gmake[1]: *** [CMakeFiles/Makefile2:193: CMakeFiles/camera_debug.dir/all] Error 2
+[0.092s] [ 50%] [32mBuilding CXX object CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o[0m
+[5.139s] [100%] [32m[1mLinking CXX executable NetFinder[0m
+[5.256s] [100%] Built target NetFinder
+[5.257s] gmake: *** [Makefile:146: all] Error 2
+[5.260s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3

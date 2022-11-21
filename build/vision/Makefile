@@ -211,17 +211,30 @@ NetFinder/fast:
 .PHONY : NetFinder/fast
 
 #=============================================================================
-# Target rules for targets named camera
+# Target rules for targets named ament_cmake_python_copy_vision
 
 # Build rule for target.
-camera: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 camera
-.PHONY : camera
+ament_cmake_python_copy_vision: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_vision
+.PHONY : ament_cmake_python_copy_vision
 
 # fast build rule for target.
-camera/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/build
-.PHONY : camera/fast
+ament_cmake_python_copy_vision/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_vision.dir/build.make CMakeFiles/ament_cmake_python_copy_vision.dir/build
+.PHONY : ament_cmake_python_copy_vision/fast
+
+#=============================================================================
+# Target rules for targets named ament_cmake_python_build_vision_egg
+
+# Build rule for target.
+ament_cmake_python_build_vision_egg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_build_vision_egg
+.PHONY : ament_cmake_python_build_vision_egg
+
+# fast build rule for target.
+ament_cmake_python_build_vision_egg/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_vision_egg.dir/build.make CMakeFiles/ament_cmake_python_build_vision_egg.dir/build
+.PHONY : ament_cmake_python_build_vision_egg/fast
 
 src/NetFinder.o: src/NetFinder.cpp.o
 .PHONY : src/NetFinder.o
@@ -247,30 +260,6 @@ src/NetFinder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/src/NetFinder.cpp.s
 .PHONY : src/NetFinder.cpp.s
 
-src/camera.o: src/camera.cpp.o
-.PHONY : src/camera.o
-
-# target to build an object file
-src/camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/src/camera.cpp.o
-.PHONY : src/camera.cpp.o
-
-src/camera.i: src/camera.cpp.i
-.PHONY : src/camera.i
-
-# target to preprocess a source file
-src/camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/src/camera.cpp.i
-.PHONY : src/camera.cpp.i
-
-src/camera.s: src/camera.cpp.s
-.PHONY : src/camera.s
-
-# target to generate assembly for a file
-src/camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/camera.dir/build.make CMakeFiles/camera.dir/src/camera.cpp.s
-.PHONY : src/camera.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -284,16 +273,14 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... ament_cmake_python_build_vision_egg"
+	@echo "... ament_cmake_python_copy_vision"
 	@echo "... uninstall"
 	@echo "... vision_uninstall"
 	@echo "... NetFinder"
-	@echo "... camera"
 	@echo "... src/NetFinder.o"
 	@echo "... src/NetFinder.i"
 	@echo "... src/NetFinder.s"
-	@echo "... src/camera.o"
-	@echo "... src/camera.i"
-	@echo "... src/camera.s"
 .PHONY : help
 
 

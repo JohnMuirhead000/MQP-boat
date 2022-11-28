@@ -1,0 +1,42 @@
+[0.023s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3
+[0.101s] [100%] Built target NetFinder
+[0.102s] [100%] Built target ament_cmake_python_copy_vision
+[0.401s] running egg_info
+[0.402s] writing vision.egg-info/PKG-INFO
+[0.403s] writing dependency_links to vision.egg-info/dependency_links.txt
+[0.403s] writing top-level names to vision.egg-info/top_level.txt
+[0.405s] reading manifest file 'vision.egg-info/SOURCES.txt'
+[0.406s] writing manifest file 'vision.egg-info/SOURCES.txt'
+[0.435s] [100%] Built target ament_cmake_python_build_vision_egg
+[0.448s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3
+[0.485s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/parallels/ROS_Workspaces/boat_workspace/build/vision
+[0.492s] -- Install configuration: ""
+[0.493s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/NetFinder
+[0.494s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/pythonpath.sh
+[0.494s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/pythonpath.dsv
+[0.494s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/local/lib/python3.10/dist-packages/vision-0.0.0-py3.10.egg-info
+[0.494s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/local/lib/python3.10/dist-packages/vision-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.494s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/local/lib/python3.10/dist-packages/vision-0.0.0-py3.10.egg-info/PKG-INFO
+[0.494s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/local/lib/python3.10/dist-packages/vision-0.0.0-py3.10.egg-info/top_level.txt
+[0.495s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/local/lib/python3.10/dist-packages/vision-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.495s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/local/lib/python3.10/dist-packages/vision
+[0.495s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/local/lib/python3.10/dist-packages/vision/__init__.py
+[0.527s] Listing '/home/parallels/ROS_Workspaces/boat_workspace/install/vision/local/lib/python3.10/dist-packages/vision'...
+[0.537s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/camera_debug.py
+[0.537s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/lib/vision/camera.py
+[0.538s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/package_run_dependencies/vision
+[0.541s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/parent_prefix_path/vision
+[0.542s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/ament_prefix_path.sh
+[0.542s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/ament_prefix_path.dsv
+[0.542s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/path.sh
+[0.542s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/environment/path.dsv
+[0.543s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.bash
+[0.543s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.sh
+[0.543s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.zsh
+[0.544s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/local_setup.dsv
+[0.544s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/package.dsv
+[0.544s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/ament_index/resource_index/packages/vision
+[0.545s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/cmake/visionConfig.cmake
+[0.545s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/cmake/visionConfig-version.cmake
+[0.545s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/vision/share/vision/package.xml
+[0.545s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/parallels/ROS_Workspaces/boat_workspace/build/vision

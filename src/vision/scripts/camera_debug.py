@@ -47,8 +47,9 @@ class CamSub(Node):
     
   def __init__(self):
 
+    self.iteration = 0
     super().__init__('camera_debug')
-    self.sub = self.create_subscription(Image, 'video_frames', self.process_image,  10)
+    self.sub = self.create_subscription(Image, 'video_frames', self.process_image,  100)
     print("building the debugger")
 
     
@@ -60,9 +61,15 @@ class CamSub(Node):
     current_frame = br.imgmsg_to_cv2(image)
     
     # Display image
-    cv2.imwrite("~/images")
-    cv2.waitKey(0)
+    PATH = "/home/parallels/Desktop/lame_photos/an_image" + str(self.iteration) + ".png"
+    cv2.imwrite(PATH,current_frame)
+
+    # img = np.random.randint(255, size=(300, 600, 3))
+    # cv2.imwrite("home/parallels/Desktop/an_image.bmp", current_frame)
+
+    cv2.waitKey(30)
     print ("processed image")
+    self.iteration = self.iteration + 1
 
 def main(args=None):
    rclpy.init(args=args)

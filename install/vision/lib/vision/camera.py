@@ -24,16 +24,19 @@ class CamPub(Node):
 
     
   def timer_callback(self):
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(2)
      # Used to convert between ROS and OpenCV images
     br = CvBridge()
-    ret, frame = cap.read()
+    counter = 0
+    while counter < 50:
+      ret, frame = cap.read()
+      counter = counter + 1
     if ret == True:
         # Print debugging information to the terminal
         # Publish the image.
         # The 'cv2_to_imgmsg' method converts an OpenCV
         # image to a ROS image message
-        print("red rover red rover sening " + str(br.cv2_to_imgmsg(frame)))
+        print("sending over image")
         self.pub.publish(br.cv2_to_imgmsg(frame))
 
 def main(args=None):

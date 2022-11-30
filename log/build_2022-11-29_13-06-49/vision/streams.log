@@ -1,0 +1,34 @@
+[0.027s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3
+[0.106s] -- Found ament_cmake: 1.3.2 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.344s] -- Found rclcpp: 16.0.1 (/opt/ros/humble/share/rclcpp/cmake)
+[0.464s] -- Found rosidl_generator_c: 3.1.3 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.472s] -- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.489s] -- Found rosidl_generator_cpp: 3.1.3 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.523s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.561s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.701s] -- Found rmw_implementation_cmake: 6.1.0 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.708s] -- Found rmw_fastrtps_cpp: 6.2.1 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.908s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.209s] -- Found rclpy: 3.3.4 (/opt/ros/humble/share/rclpy/cmake)
+[1.383s] -- Configuring done
+[1.486s] -- Generating done
+[1.493s] -- Build files have been written to: /home/parallels/ROS_Workspaces/boat_workspace/build/vision
+[1.527s] [35m[1mConsolidate compiler generated dependencies of target NetFinder[0m
+[1.543s] [  0%] Built target ament_cmake_python_copy_vision
+[1.547s] [ 50%] [32mBuilding CXX object CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o[0m
+[1.643s] [01m[K/home/parallels/ROS_Workspaces/boat_workspace/src/vision/src/NetFinder.cpp:7:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/msg/image.hpp: No such file or directory
+[1.643s]     7 | #include [01;31m[K<sensor_msgs/msg/image.hpp>[m[K
+[1.643s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.643s] compilation terminated.
+[1.646s] gmake[2]: *** [CMakeFiles/NetFinder.dir/build.make:76: CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o] Error 1
+[1.646s] gmake[1]: *** [CMakeFiles/Makefile2:140: CMakeFiles/NetFinder.dir/all] Error 2
+[1.647s] gmake[1]: *** Waiting for unfinished jobs....
+[1.947s] running egg_info
+[1.962s] writing vision.egg-info/PKG-INFO
+[1.963s] writing dependency_links to vision.egg-info/dependency_links.txt
+[1.963s] writing top-level names to vision.egg-info/top_level.txt
+[2.013s] reading manifest file 'vision.egg-info/SOURCES.txt'
+[2.013s] writing manifest file 'vision.egg-info/SOURCES.txt'
+[2.061s] [ 50%] Built target ament_cmake_python_build_vision_egg
+[2.063s] gmake: *** [Makefile:146: all] Error 2
+[2.073s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3

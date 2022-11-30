@@ -1,1 +1,1 @@
-cv2:cv_bridge/CvBridge:rclcpp:rclpy:sensor_msgs.msg/Image:std_msgs
+cv2:cv_bridge/CvBridge:rclpy:sensor_msgs:std_msgs

@@ -7,10 +7,10 @@
   <maintainer email="jmuir5125@gmail.com">parallels</maintainer>
   <license>TODO: License declaration</license>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <!-- <buildtool_depend>ament_cmake</buildtool_depend> -->
   <buildtool_depend>ament_cmake_python</buildtool_depend>
 
-  <depend>rclcpp</depend>
+  <!-- <depend>rclcpp</depend> -->
   <depend>rclpy</depend>
 
   <test_depend>ament_lint_auto</test_depend>
@@ -20,7 +20,7 @@
     <build_type>ament_cmake</build_type>
   </export>
   <depend>std_msgs</depend>
-  <depend>sensor_msgs.msg/Image</depend>
+  <depend>sensor_msgs</depend>
   <depend>cv_bridge/CvBridge</depend>
   <depend>cv2</depend>
 </package>

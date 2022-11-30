@@ -1,0 +1,19 @@
+[0.015s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3
+[0.086s] [  0%] Built target ament_cmake_python_copy_vision
+[0.094s] [ 50%] [32mBuilding CXX object CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o[0m
+[0.203s] [01m[K/home/parallels/ROS_Workspaces/boat_workspace/src/vision/src/NetFinder.cpp:8:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/sensor_msgs/msg/image.hpp: No such file or directory
+[0.203s]     8 | #include [01;31m[K"sensor_msgs/sensor_msgs/msg/image.hpp"[m[K
+[0.203s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.203s] compilation terminated.
+[0.204s] gmake[2]: *** [CMakeFiles/NetFinder.dir/build.make:76: CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o] Error 1
+[0.205s] gmake[1]: *** [CMakeFiles/Makefile2:140: CMakeFiles/NetFinder.dir/all] Error 2
+[0.205s] gmake[1]: *** Waiting for unfinished jobs....
+[0.515s] running egg_info
+[0.532s] writing vision.egg-info/PKG-INFO
+[0.533s] writing dependency_links to vision.egg-info/dependency_links.txt
+[0.533s] writing top-level names to vision.egg-info/top_level.txt
+[0.580s] reading manifest file 'vision.egg-info/SOURCES.txt'
+[0.581s] writing manifest file 'vision.egg-info/SOURCES.txt'
+[0.640s] [ 50%] Built target ament_cmake_python_build_vision_egg
+[0.641s] gmake: *** [Makefile:146: all] Error 2
+[0.644s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3

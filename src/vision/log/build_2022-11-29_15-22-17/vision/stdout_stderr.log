@@ -1,0 +1,17 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o[0m
+[ 50%] Built target ament_cmake_python_copy_vision
+[01m[K/home/parallels/ROS_Workspaces/boat_workspace/src/vision/src/NetFinder.cpp:9:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/image.hpp: No such file or directory
+    9 | #include [01;31m[K<sensor_msgs/image.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/NetFinder.dir/build.make:76: CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:140: CMakeFiles/NetFinder.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+running egg_info
+writing vision.egg-info/PKG-INFO
+writing dependency_links to vision.egg-info/dependency_links.txt
+writing top-level names to vision.egg-info/top_level.txt
+reading manifest file 'vision.egg-info/SOURCES.txt'
+writing manifest file 'vision.egg-info/SOURCES.txt'
+[ 50%] Built target ament_cmake_python_build_vision_egg
+gmake: *** [Makefile:146: all] Error 2

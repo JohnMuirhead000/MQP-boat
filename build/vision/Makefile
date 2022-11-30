@@ -198,19 +198,6 @@ vision_uninstall/fast:
 .PHONY : vision_uninstall/fast
 
 #=============================================================================
-# Target rules for targets named NetFinder
-
-# Build rule for target.
-NetFinder: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NetFinder
-.PHONY : NetFinder
-
-# fast build rule for target.
-NetFinder/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/build
-.PHONY : NetFinder/fast
-
-#=============================================================================
 # Target rules for targets named ament_cmake_python_copy_vision
 
 # Build rule for target.
@@ -236,30 +223,6 @@ ament_cmake_python_build_vision_egg/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_vision_egg.dir/build.make CMakeFiles/ament_cmake_python_build_vision_egg.dir/build
 .PHONY : ament_cmake_python_build_vision_egg/fast
 
-src/NetFinder.o: src/NetFinder.cpp.o
-.PHONY : src/NetFinder.o
-
-# target to build an object file
-src/NetFinder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/src/NetFinder.cpp.o
-.PHONY : src/NetFinder.cpp.o
-
-src/NetFinder.i: src/NetFinder.cpp.i
-.PHONY : src/NetFinder.i
-
-# target to preprocess a source file
-src/NetFinder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/src/NetFinder.cpp.i
-.PHONY : src/NetFinder.cpp.i
-
-src/NetFinder.s: src/NetFinder.cpp.s
-.PHONY : src/NetFinder.s
-
-# target to generate assembly for a file
-src/NetFinder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NetFinder.dir/build.make CMakeFiles/NetFinder.dir/src/NetFinder.cpp.s
-.PHONY : src/NetFinder.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -277,10 +240,6 @@ help:
 	@echo "... ament_cmake_python_copy_vision"
 	@echo "... uninstall"
 	@echo "... vision_uninstall"
-	@echo "... NetFinder"
-	@echo "... src/NetFinder.o"
-	@echo "... src/NetFinder.i"
-	@echo "... src/NetFinder.s"
 .PHONY : help
 
 

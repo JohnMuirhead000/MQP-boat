@@ -17,8 +17,8 @@ class CamPub(Node):
 
     
     super().__init__('camera')
-    self.pub = self.create_publisher(Image, 'video_frames', 10)
-    timer_period = 0.5  # seconds
+    self.pub = self.create_publisher(Image, 'video_frames', 100)
+    timer_period = 0.05  # seconds
     self.timer = self.create_timer(timer_period, self.timer_callback)
     self.i = 0
 
@@ -28,7 +28,7 @@ class CamPub(Node):
      # Used to convert between ROS and OpenCV images
     br = CvBridge()
     counter = 0
-    while counter < 50:
+    while counter < 20:
       ret, frame = cap.read()
       counter = counter + 1
     if ret == True:

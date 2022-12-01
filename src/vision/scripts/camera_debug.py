@@ -61,7 +61,7 @@ class CamSub(Node):
     current_frame = br.imgmsg_to_cv2(image)
     
     # Display image
-    PATH = "/home/parallels/Desktop/lame_photos/an_image" + str(self.iteration) + ".png"
+    PATH = "/home/shnub/Desktop/lame_photos/an_image" + str(self.iteration) + ".png"
     cv2.imwrite(PATH,current_frame)
 
     # img = np.random.randint(255, size=(300, 600, 3))

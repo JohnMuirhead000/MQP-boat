@@ -12,13 +12,17 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/motors.msg")
 
 
-add_executable(nav_logic src/dest_to_motorInfo.cpp)
+add_executable(nav_logic src/motor.cpp)
 ament_target_dependencies(nav_logic rclcpp std_msgs)
 
-add_executable(nav_do src/motorInfo_to_GPIO.cpp)
+add_executable(nav_do src/arduino.cpp)
 ament_target_dependencies(nav_do rclcpp std_msgs)
+
 
 install(TARGETS
   nav_logic

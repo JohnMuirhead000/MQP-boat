@@ -17,19 +17,20 @@ class CamPub(Node):
 
     
     super().__init__('camera')
+    self.cap = cv2.VideoCapture(2)
     self.pub = self.create_publisher(Image, 'video_frames', 100)
-    timer_period = 0.05  # seconds
+    timer_period = 0.1  # seconds
     self.timer = self.create_timer(timer_period, self.timer_callback)
     self.i = 0
 
     
   def timer_callback(self):
-    cap = cv2.VideoCapture(2)
+
      # Used to convert between ROS and OpenCV images
     br = CvBridge()
     counter = 0
-    while counter < 20:
-      ret, frame = cap.read()
+    while counter < 1:
+      ret, frame = self.cap.read()
       counter = counter + 1
     if ret == True:
         # Print debugging information to the terminal

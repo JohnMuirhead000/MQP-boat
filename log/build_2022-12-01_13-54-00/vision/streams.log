@@ -1,0 +1,9 @@
+[0.055s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3
+[0.419s] Built target ament_cmake_python_copy_vision
+[0.850s] running egg_info
+[0.870s] writing vision.egg-info/PKG-INFO
+[0.870s] writing dependency_links to vision.egg-info/dependency_links.txt
+[0.871s] writing top-level names to vision.egg-info/top_level.txt
+[0.922s] reading manifest file 'vision.egg-info/SOURCES.txt'
+[0.923s] writing manifest file 'vision.egg-info/SOURCES.txt'
+[0.980s] Built target ament_cmake_python_build_vision_egg

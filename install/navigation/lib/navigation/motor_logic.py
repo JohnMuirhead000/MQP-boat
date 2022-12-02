@@ -30,13 +30,10 @@ class CamPub(Node):
 
     print("time to process the point ("+ str(point.x) + ", " + str(point.y) + ", " + str(point.z) + ")")
 
-    #calculate the ideal motor speeds based on where the trash is
-    left_motor = float(32)
-    right_motor = float(43)
-
+    left, right = self.find_speed(point)
 
     #jumk data Float32MultiArray; probably better to replace with custom message type
-    data = [left_motor, right_motor]
+    data = [left, right]
 
     multiArrayLayout = MultiArrayLayout()
 
@@ -64,6 +61,12 @@ class CamPub(Node):
 
     # publish belt stuff
     self.pub_belt.publish(belt_speed)
+
+  #TODO; function takes in a point and rturns left anf right speed to get to trash
+  def find_speed(self, point):
+    #Junk data
+    return float(12), float(14)
+
 
 
   

@@ -25,14 +25,25 @@ class motor_action(Node):
     left_speed = speeds.data[0]
     right_speed = speeds.data[1]
     print("the speed to send the motors, (left, right) is (" + str(left_speed) +", "  + str(right_speed) + ")")
+    self.run_nav_motors(left_speed, right_speed)
 
     #once we have these speeds, send the propper signals to the outputs
   
 
   def move_belt(self, speed):
     print("the speed to send the belt is" + str(speed))
+    self.run_belt_motor(speed)
 
     # send the propper signals to the outputs
+
+  #TODO: Given left and right motor speeds, send signals to the Arduino to send it that speed
+  def run_nav_motors(self, left, right):
+    print("Need to implement 'run_nav_motors'")
+  
+  #TODO: Given belt motor speed, send signals to the Arduino to send it that speed
+  def run_belt_motor(self, speed):
+    print("Need to implement 'run_belt_motor'")
+  
 
 
 

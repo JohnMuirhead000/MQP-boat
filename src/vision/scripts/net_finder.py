@@ -24,7 +24,7 @@ class find_net(Node):
     point = self.perform_ai(msg)
     self.pub.publish(point)
 
-  # takes in an image and returns the point of the object we want
+  # TODO: takes in an image and returns the point of the object we want
   def perform_ai(self, image):
     point = Point()
 

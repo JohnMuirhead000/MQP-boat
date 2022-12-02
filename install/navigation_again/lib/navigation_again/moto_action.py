@@ -12,11 +12,11 @@ from sensor_msgs.msg import Image # Image is the message type
 from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
 import cv2 # OpenCV library
 
-class find_net(Node):
+class motor_action(Node):
   def __init__(self):
 
     
-    super().__init__('net_finder')
+    super().__init__('motor_action')
     self.pub = self.create_publisher(Point, 'destination_coords', 10)
     self.sub = self.create_subscription(Image, 'video_frames', self.pub_coords, 10)
     
@@ -24,7 +24,7 @@ class find_net(Node):
     point = self.perform_ai(msg)
     self.pub.publish(point)
 
-  # TODO: takes in an image and returns the point of the object we want
+  # takes in an image and returns the point of the object we want
   def perform_ai(self, image):
     point = Point()
 
@@ -38,11 +38,10 @@ class find_net(Node):
 
 def main(args=None):
    rclpy.init(args=args)
-   net_node = find_net()
-   rclpy.spin(net_node)
-   net_node.destroy_node()
+   motor = motor_action()
+   rclpy.spin(motor)
+   motor.destroy_node()
    rclpy.shutdown
 
          
 if __name__ == '__main__':
-    main()

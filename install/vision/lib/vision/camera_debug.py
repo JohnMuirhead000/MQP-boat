@@ -12,38 +12,8 @@ from sensor_msgs.msg import Image # Image is the message type
 from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
 from rclpy.node import Node
 import cv2 # OpenCV library
-import os
+import os #used for ENV variables
  
-# def callback(data):
- 
-#   # Used to convert between ROS and OpenCV images
-#   br = CvBridge()
-   
-#   # Convert ROS Image message to OpenCV image
-#   current_frame = br.imgmsg_to_cv2(data)
-   
-#   # Display image
-#   cv2.imwrite("~/images")
-   
-#   cv2.waitKey(0)
-      
-# def receive_message():
- 
-#   # Tells rospy the name of the node.
-#   # Anonymous = True makes sure the node has a unique name. Random
-#   # numbers are added to the end of the name. 
-#   rclpy.init()
-   
-#   # Node is subscribing to the video_frames topic
-#   rclpy.create_subscription'video_frames', Image, callback)
- 
-#   # spin() simply keeps python from exiting until this node is stopped
-#   rclpy.spin()
- 
-#   # Close down the video stream when done
-#   cv2.destroyAllWindows()
-
-
 class CamSub(Node):
     
   def __init__(self):
@@ -53,7 +23,8 @@ class CamSub(Node):
     print("building the debugger")
     #print("Saving Images to " + os.environ.get("ROS_ImagePath"))
    
-    self.PATH = os.environ.get("ROS_ImagePath") #make sure to to set this every time you open the terminal
+    #make sure to to set this every time you open the terminal
+    self.PATH = os.environ.get("ROS_ImagePath")
     
   def process_image(self, image):
   # Used to convert between ROS and OpenCV images
@@ -65,9 +36,6 @@ class CamSub(Node):
     # Display image
     PATH = self.PATH + "an_image" + str(self.iteration) + ".png"
     cv2.imwrite(PATH,current_frame)
-
-    # img = np.random.randint(255, size=(300, 600, 3))
-    # cv2.imwrite("home/parallels/Desktop/an_image.bmp", current_frame)
 
     cv2.waitKey(30)
     print ("processed image")

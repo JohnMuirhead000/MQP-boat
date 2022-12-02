@@ -1,0 +1,65 @@
+[0.030s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/parallels/ROS_Workspaces/boat_workspace/src/navigation_again -DCMAKE_INSTALL_PREFIX=/home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again
+[0.178s] -- The C compiler identification is GNU 11.3.0
+[0.323s] -- The CXX compiler identification is GNU 11.3.0
+[0.346s] -- Detecting C compiler ABI info
+[0.596s] -- Detecting C compiler ABI info - done
+[0.624s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.625s] -- Detecting C compile features
+[0.625s] -- Detecting C compile features - done
+[0.632s] -- Detecting CXX compiler ABI info
+[0.816s] -- Detecting CXX compiler ABI info - done
+[0.832s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.832s] -- Detecting CXX compile features
+[0.832s] -- Detecting CXX compile features - done
+[0.833s] -- Found ament_cmake_python: 1.3.2 (/opt/ros/humble/share/ament_cmake_python/cmake)
+[0.834s] -- Found rclpy: 3.3.4 (/opt/ros/humble/share/rclpy/cmake)
+[0.838s] -- Found sensor_msgs: 4.2.2 (/opt/ros/humble/share/sensor_msgs/cmake)
+[1.777s] -- Found Python3: /usr/bin/python3.10 (found version "3.10.6") found components: Interpreter 
+[1.926s] -- Found rosidl_generator_c: 3.1.3 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.931s] -- Found rosidl_adapter: 3.1.3 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.941s] -- Found rosidl_generator_cpp: 3.1.3 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.971s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.000s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.512s] -- Configuring done
+[2.527s] -- Generating done
+[2.530s] -- Build files have been written to: /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again
+[2.538s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/parallels/ROS_Workspaces/boat_workspace/src/navigation_again -DCMAKE_INSTALL_PREFIX=/home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again
+[2.540s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again -- -j3 -l3
+[2.607s] Built target ament_cmake_python_copy_navigation_again
+[2.615s] Built target ament_cmake_python_copy_navigation_again_setup
+[2.957s] running egg_info
+[2.957s] creating navigation_again.egg-info
+[2.959s] writing manifest file 'navigation_again.egg-info/SOURCES.txt'
+[2.962s] writing manifest file 'navigation_again.egg-info/SOURCES.txt'
+[2.990s] Built target ament_cmake_python_build_navigation_again_egg
+[3.004s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again -- -j3 -l3
+[3.036s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again
+[3.045s] -- Install configuration: ""
+[3.045s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/environment/pythonpath.sh
+[3.046s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/environment/pythonpath.dsv
+[3.047s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/local/lib/python3.10/dist-packages/navigation_again-0.0.0-py3.10.egg-info
+[3.047s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/local/lib/python3.10/dist-packages/navigation_again-0.0.0-py3.10.egg-info/dependency_links.txt
+[3.047s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/local/lib/python3.10/dist-packages/navigation_again-0.0.0-py3.10.egg-info/PKG-INFO
+[3.047s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/local/lib/python3.10/dist-packages/navigation_again-0.0.0-py3.10.egg-info/top_level.txt
+[3.047s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/local/lib/python3.10/dist-packages/navigation_again-0.0.0-py3.10.egg-info/SOURCES.txt
+[3.047s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/local/lib/python3.10/dist-packages/navigation_again
+[3.047s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/local/lib/python3.10/dist-packages/navigation_again/__init__.py
+[3.082s] Listing '/home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/local/lib/python3.10/dist-packages/navigation_again'...
+[3.088s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/navigation_again/motor_action.py
+[3.088s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/navigation_again/motor_logic.py
+[3.088s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/ament_index/resource_index/package_run_dependencies/navigation_again
+[3.089s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/ament_index/resource_index/parent_prefix_path/navigation_again
+[3.090s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/environment/ament_prefix_path.sh
+[3.092s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/environment/ament_prefix_path.dsv
+[3.092s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/environment/path.sh
+[3.093s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/environment/path.dsv
+[3.094s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/local_setup.bash
+[3.095s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/local_setup.sh
+[3.099s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/local_setup.zsh
+[3.100s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/local_setup.dsv
+[3.100s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/package.dsv
+[3.101s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/ament_index/resource_index/packages/navigation_again
+[3.101s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/cmake/navigation_againConfig.cmake
+[3.102s] -- Installing: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/cmake/navigation_againConfig-version.cmake
+[3.102s] -- Up-to-date: /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again/package.xml
+[3.102s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again

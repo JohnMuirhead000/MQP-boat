@@ -1,0 +1,12 @@
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/uninstall.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/navigation_again_uninstall.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/ament_cmake_python_copy_navigation_again.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/ament_cmake_python_copy_navigation_again_setup.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/ament_cmake_python_build_navigation_again_egg.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/test.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/edit_cache.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/rebuild_cache.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/list_install_components.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/install.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/install/local.dir
+/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/CMakeFiles/install/strip.dir

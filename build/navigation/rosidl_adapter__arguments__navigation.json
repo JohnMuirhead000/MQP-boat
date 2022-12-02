@@ -1,6 +1,0 @@
-{
-  "package_name": "navigation",
-  "non_idl_tuples": [
-    "/home/parallels/ROS_Workspaces/boat_workspace/src/navigation:msg/motors.msg"
-  ]
-}

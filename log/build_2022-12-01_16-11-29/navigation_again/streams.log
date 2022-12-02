@@ -1,0 +1,20 @@
+[0.777s] Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/src/navigation_again': PYTHONPATH=/home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/navigation_again build --build-base /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/build install --prefix /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again --record /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/install.log --single-version-externally-managed
+[1.092s] running egg_info
+[1.099s] writing manifest file '../../build/navigation_again/navigation_again.egg-info/SOURCES.txt'
+[1.099s] running build
+[1.099s] running build_py
+[1.100s] running install
+[1.100s] running install_lib
+[1.100s] creating /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/python3.10/site-packages/navigation_again
+[1.100s] byte-compiling /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/python3.10/site-packages/navigation_again/__init__.py to __init__.cpython-310.pyc
+[1.100s] running install_data
+[1.101s] creating /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/ament_index
+[1.107s] creating /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/ament_index/resource_index
+[1.107s] creating /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/ament_index/resource_index/packages
+[1.108s] copying resource/navigation_again -> /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/ament_index/resource_index/packages
+[1.108s] copying package.xml -> /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/share/navigation_again
+[1.108s] running install_egg_info
+[1.109s] Copying ../../build/navigation_again/navigation_again.egg-info to /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/python3.10/site-packages/navigation_again-0.0.0-py3.10.egg-info
+[1.113s] running install_scripts
+[1.137s] writing list of installed files to '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/install.log'
+[1.170s] Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/src/navigation_again' returned '0': PYTHONPATH=/home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/navigation_again build --build-base /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/build install --prefix /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again --record /home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/install.log --single-version-externally-managed

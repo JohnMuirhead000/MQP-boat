@@ -1,0 +1,12 @@
+running egg_info
+writing manifest file '../../build/navigation_again/navigation_again.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/python3.10/site-packages/navigation_again-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/navigation_again/navigation_again.egg-info to /home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again/lib/python3.10/site-packages/navigation_again-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation_again/install.log'

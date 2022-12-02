@@ -1,6 +1,0 @@
-setup.py
-vision/__init__.py
-vision.egg-info/PKG-INFO
-vision.egg-info/SOURCES.txt
-vision.egg-info/dependency_links.txt
-vision.egg-info/top_level.txt

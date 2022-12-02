@@ -62,7 +62,7 @@ class CamPub(Node):
     # publish belt stuff
     self.pub_belt.publish(belt_speed)
 
-  #TODO; function takes in a point and rturns left anf right speed to get to trash
+  #TODO; function takes in a point and returns left anf right speed to get to trash
   def find_speed(self, point):
     #Junk data
     return float(12), float(14)

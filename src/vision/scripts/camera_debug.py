@@ -12,6 +12,7 @@ from sensor_msgs.msg import Image # Image is the message type
 from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
 from rclpy.node import Node
 import cv2 # OpenCV library
+import os
  
 # def callback(data):
  
@@ -46,12 +47,13 @@ import cv2 # OpenCV library
 class CamSub(Node):
     
   def __init__(self):
-
     self.iteration = 0
     super().__init__('camera_debug')
     self.sub = self.create_subscription(Image, 'video_frames', self.process_image,  100)
     print("building the debugger")
-
+    print("Saving Images to " + os.environ.get("ROS_ImagePath"))
+   
+    self.PATH = os.environ.get("ROS_ImagePath") #make sure to to set this every time you open the terminal
     
   def process_image(self, image):
   # Used to convert between ROS and OpenCV images
@@ -61,8 +63,8 @@ class CamSub(Node):
     current_frame = br.imgmsg_to_cv2(image)
     
     # Display image
-    PATH = "/home/shnub/Desktop/lame_photos/an_image" + str(self.iteration) + ".png"
-    cv2.imwrite(PATH,current_frame)
+    #PATH = "/home/shnub/Desktop/lame_photos/" + "an_image" + str(self.iteration) + ".png"
+    cv2.imwrite(self.PATH,current_frame)
 
     # img = np.random.randint(255, size=(300, 600, 3))
     # cv2.imwrite("home/parallels/Desktop/an_image.bmp", current_frame)

@@ -1,2 +1,0 @@
-Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/parallels/ROS_Workspaces/boat_workspace/src/vision -DCMAKE_INSTALL_PREFIX=/home/parallels/ROS_Workspaces/boat_workspace/install/vision
-Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/parallels/ROS_Workspaces/boat_workspace/src/vision -DCMAKE_INSTALL_PREFIX=/home/parallels/ROS_Workspaces/boat_workspace/install/vision

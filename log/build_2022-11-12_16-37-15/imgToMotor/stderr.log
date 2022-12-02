@@ -1,9 +1,0 @@
-gmake[2]: *** [CMakeFiles/nav_logic.dir/build.make:76: CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.o] Interrupt
-gmake[2]: *** [CMakeFiles/cam_logic.dir/build.make:76: CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o] Interrupt
-gmake[1]: *** [CMakeFiles/Makefile2:169: CMakeFiles/cam_logic.dir/all] Interrupt
-gmake[1]: *** [CMakeFiles/Makefile2:195: CMakeFiles/nav_logic.dir/all] Interrupt
-gmake[2]: *** wait: No child processes.  Stop.
-gmake[2]: *** Waiting for unfinished jobs....
-gmake[2]: *** wait: No child processes.  Stop.
-gmake[1]: *** [CMakeFiles/Makefile2:143: CMakeFiles/cam_driver.dir/all] Error 2
-gmake: *** [Makefile:146: all] Interrupt

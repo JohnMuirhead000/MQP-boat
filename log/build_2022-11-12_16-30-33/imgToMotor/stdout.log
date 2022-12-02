@@ -1,8 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target cam_logic[0m
-[ 12%] [32mBuilding CXX object CMakeFiles/cam_driver.dir/src/world_to_img.cpp.o[0m
-[ 37%] [32mBuilding CXX object CMakeFiles/cam_logic.dir/src/img_to_destination.cpp.o[0m
-[ 37%] [32mBuilding CXX object CMakeFiles/nav_logic.dir/src/dest_to_motorInfo.cpp.o[0m
-[ 50%] [32m[1mLinking CXX executable nav_logic[0m
-[ 62%] [32m[1mLinking CXX executable cam_logic[0m
-[ 62%] Built target nav_logic
-[ 62%] Built target cam_logic

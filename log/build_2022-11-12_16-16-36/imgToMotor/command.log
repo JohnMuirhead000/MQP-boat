@@ -1,2 +1,0 @@
-Invoking command in '/home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor -- -j3 -l3
-Invoked command in '/home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor -- -j3 -l3

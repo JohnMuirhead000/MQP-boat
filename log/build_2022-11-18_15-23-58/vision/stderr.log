@@ -1,5 +1,0 @@
-[31mCMake Error at CMakeLists.txt:25 (install):
-  install TARGETS given target "net_finder" which does not exist.
-
-[0m
-gmake: *** [Makefile:308: cmake_check_build_system] Error 1

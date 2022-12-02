@@ -1,4 +1,0 @@
-Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor -- -j3 -l3
-Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor -- -j3 -l3
-Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor
-Invoked command in '/home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor

@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+navigation/__init__.py
+navigation.egg-info/PKG-INFO
+navigation.egg-info/SOURCES.txt
+navigation.egg-info/dependency_links.txt
+navigation.egg-info/top_level.txt

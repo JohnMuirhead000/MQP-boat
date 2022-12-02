@@ -1,6 +1,0 @@
-[0.024s] Invoking command in '/home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor -- -j3 -l3
-[0.044s] [0mCMake Error: The current CMakeCache.txt directory /home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor/CMakeCache.txt is different than the directory /home/parallels/ROS_Workspaces/boat_workspace/build/imgToMotor where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt[0m
-[0.055s] [0mCMake Error: The source directory "/home/parallels/ROS_Workspaces/boat_workspace/src/imgToMotor" does not exist.
-[0.055s] Specify --help for usage, or press the help button on the CMake GUI.[0m
-[0.056s] gmake: *** [Makefile:226: cmake_check_build_system] Error 1
-[0.058s] Invoked command in '/home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/MQP-boat/build/imgToMotor -- -j3 -l3

@@ -1,1 +1,0 @@
-Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/navigation': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/parallels/ROS_Workspaces/boat_workspace/src/navigation -DCMAKE_INSTALL_PREFIX=/home/parallels/ROS_Workspaces/boat_workspace/install/navigation

@@ -1,1 +1,0 @@
-Invoking command in '/home/parallels/ROS_Workspaces/boat_workspace/build/vision': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/parallels/ROS_Workspaces/boat_workspace/install/navigation_again:/opt/ros/humble /usr/bin/cmake --build /home/parallels/ROS_Workspaces/boat_workspace/build/vision -- -j3 -l3

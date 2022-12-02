@@ -63,9 +63,9 @@ class moto_logic(Node):
 
     # value subject to change based off of additional motor info
     MAX_SPEED = 100
-    CAMERA_ANGLE_COVERED = 180 #assume the camera is covering 180 degrees of aread 
+    CAMERA_ANGLE_COVERED = 45.21892841 #assume the camera is covering 180 degrees of aread 
     Y_DEADBAND = 5 #can move foward if it is within 5 degrees of x axis
-    SCREEN_WIDTH = 200 # complete guess; absolutly subject to change
+    SCREEN_WIDTH = 640 # complete guess; absolutly subject to change
     MAX_ANGLE_ERROR = CAMERA_ANGLE_COVERED / 2 # how much can the angle be wrong by 
 
     # assume the x axis is foward, y axis is sideways and z axis is up
@@ -73,7 +73,7 @@ class moto_logic(Node):
     # if y is very large we must rotate CLOCKWISE, otherwise we rotate counterclockwise
 
     #assume left most of the screen is large and right most is 0; roatation_error will
-    # be > 0 if we need to rotate counterclockwise, and < 0 if we need to rotate counter clockwise
+    # be < 0 if we need to rotate counterclockwise, and > 0 if we need to rotate counter clockwise
     rotation_error = ((point.y - (SCREEN_WIDTH/2))*CAMERA_ANGLE_COVERED) / SCREEN_WIDTH
     print("rotation error = " + str(rotation_error))
     if abs(rotation_error) < Y_DEADBAND:
@@ -82,8 +82,8 @@ class moto_logic(Node):
       return float(MAX_SPEED), float(MAX_SPEED)
 
     else:
-      left_motor = (rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
-      right_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
+      left_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
+      right_motor = (rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
 
       print("rotating: left motor = " + str(left_motor) + " right motor = " + str(right_motor))
       return left_motor, right_motor

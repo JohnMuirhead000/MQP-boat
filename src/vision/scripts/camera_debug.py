@@ -51,7 +51,7 @@ class CamSub(Node):
     super().__init__('camera_debug')
     self.sub = self.create_subscription(Image, 'video_frames', self.process_image,  100)
     print("building the debugger")
-    print("Saving Images to " + os.environ.get("ROS_ImagePath"))
+    #print("Saving Images to " + os.environ.get("ROS_ImagePath"))
    
     self.PATH = os.environ.get("ROS_ImagePath") #make sure to to set this every time you open the terminal
     

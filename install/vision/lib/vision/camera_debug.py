@@ -51,8 +51,9 @@ class CamSub(Node):
     super().__init__('camera_debug')
     self.sub = self.create_subscription(Image, 'video_frames', self.process_image,  100)
     print("building the debugger")
-    print(os.environ.get("ROS_Path"))
-    print("ROs path")
+    #print("Saving Images to " + os.environ.get("ROS_ImagePath"))
+   
+    self.PATH = os.environ.get("ROS_ImagePath") #make sure to to set this every time you open the terminal
     
   def process_image(self, image):
   # Used to convert between ROS and OpenCV images
@@ -62,7 +63,7 @@ class CamSub(Node):
     current_frame = br.imgmsg_to_cv2(image)
     
     # Display image
-    PATH = "/home/shnub/Desktop/lame_photos/an_image" + str(self.iteration) + ".png"
+    PATH = self.PATH + "an_image" + str(self.iteration) + ".png"
     cv2.imwrite(PATH,current_frame)
 
     # img = np.random.randint(255, size=(300, 600, 3))

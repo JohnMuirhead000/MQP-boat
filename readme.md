@@ -13,6 +13,6 @@ To use ROS, everytime you open a terminal you will need to run:
 Or add it the bashrc script to automatically, run this once:
 >echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc  
 
->echo "export ROS_ImagePath=/home/yourUsername/Desktop/lame_photos/an_image" >> ~/.bashrc
+>echo "export ROS_ImagePath=/home/yourUsername/Desktop/lame_photos/" >> ~/.bashrc
 
 

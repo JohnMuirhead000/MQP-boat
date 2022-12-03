@@ -15,8 +15,10 @@ ament_python_install_package(${PROJECT_NAME})
 
 install(PROGRAMS
   scripts/net_finder.py
+  scripts/blob_detector.py
   scripts/camera_debug.py
   scripts/camera.py
+  scripts/net_finder_debug.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

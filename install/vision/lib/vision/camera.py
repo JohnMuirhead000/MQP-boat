@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
-# Basics ROS program to publish real-time streaming 
-# video from your built-in webcam
-# Author:
-# - Addison Sears-Collins
-# - https://automaticaddison.com
- 
+# Description:
+#   - Basic python ROS node to get Camera Images and transmit it 
+
 # Import the necessary libraries
 import rclpy # Python library for ROS
 from rclpy.node import Node
@@ -19,24 +16,18 @@ class CamPub(Node):
     super().__init__('camera')
     self.cap = cv2.VideoCapture(0)
     self.pub = self.create_publisher(Image, 'video_frames', 100)
-    timer_period = 0.1  # seconds
-    self.timer = self.create_timer(timer_period, self.timer_callback)
-    self.i = 0
-
+    timer_period = 0.1  # 100 miliseconds
+    self.timer = self.create_timer(timer_period, self.timer_callback) #timer so we dont take too many pictures. Takes picture every 100ms
     
+  # Call back function, that will take a publish a frame when the timer expires
   def timer_callback(self):
-
-     # Used to convert between ROS and OpenCV images
+     # CVBridge converts between ROS and OpenCV images
     br = CvBridge()
-    counter = 0
-    while counter < 1:
-      ret, frame = self.cap.read()
-      counter = counter + 1
-    if ret == True:
-        # Print debugging information to the terminal
-        # Publish the image.
-        # The 'cv2_to_imgmsg' method converts an OpenCV
-        # image to a ROS image message
+    ret, frame = self.cap.read()
+     
+    if ret == True: #if the capture was successful
+
+        #publish the Frames to the video_frames topic
         print("sending over image")
         self.pub.publish(br.cv2_to_imgmsg(frame))
 

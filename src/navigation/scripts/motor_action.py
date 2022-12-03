@@ -12,12 +12,15 @@ from std_msgs.msg import Float32
 from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import MultiArrayDimension
 from std_msgs.msg import MultiArrayLayout
+import serial
 
 class motor_action(Node):
   def __init__(self):
 
     
     super().__init__('motor_action')
+    self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
+    self.ser.reset_input_buffer()
     self.move_sub = self.create_subscription(Float32MultiArray, 'impeler_move', self.move_motors, 10)
     self.belt_sub = self.create_subscription(Float32, 'belt_move', self.move_belt, 10)
     
@@ -39,10 +42,12 @@ class motor_action(Node):
   #TODO: Given left and right motor speeds, send signals to the Arduino to send it that speed
   def run_nav_motors(self, left, right):
     print("Need to implement 'run_nav_motors'")
+    self.ser.write(b"left="+str(left) + " right=" + str(right))
   
   #TODO: Given belt motor speed, send signals to the Arduino to send it that speed
   def run_belt_motor(self, speed):
     print("Need to implement 'run_belt_motor'")
+    self.ser.write(b"belt="+str(speed))
   
 
 

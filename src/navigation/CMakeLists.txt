@@ -17,6 +17,7 @@ install(PROGRAMS
   scripts/motor_action.py
   scripts/motor_logic.py
   scripts/test_motor_logic.py
+  scripts/test_motor_action.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

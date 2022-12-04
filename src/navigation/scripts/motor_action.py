@@ -42,12 +42,12 @@ class motor_action(Node):
   #TODO: Given left and right motor speeds, send signals to the Arduino to send it that speed
   def run_nav_motors(self, left, right):
     print("Need to implement 'run_nav_motors'")
-    self.ser.write(b"left="+str(left) + " right=" + str(right))
+    self.ser.write(b"L"+str(left) + " R" + str(right))
   
   #TODO: Given belt motor speed, send signals to the Arduino to send it that speed
   def run_belt_motor(self, speed):
     print("Need to implement 'run_belt_motor'")
-    self.ser.write(b"belt="+str(speed))
+    self.ser.write(b"B"+str(speed))
   
 
 

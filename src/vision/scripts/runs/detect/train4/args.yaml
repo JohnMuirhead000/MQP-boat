@@ -11,7 +11,7 @@ cache: false
 device: null
 workers: 8
 project: null
-name: null
+name: net
 exist_ok: false
 pretrained: false
 optimizer: SGD

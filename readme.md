@@ -1,25 +1,8 @@
-## The Guch Boat
+## YOLO Model Training and Testing Ground
 
 
-### Full Set up Document:
-https://docs.google.com/document/d/1tamfkcL5zzP7Y0lnPSRwFYyd3EVCh4wt09Ef1-qj6ko/edit?usp=sharing
+#This branch is completely seperate from the rest of the repo! Do not check it out on your normal workspace!
 
+This branch is meant to be used seperately to hold the training data and test scripts.
 
-
-
-### Quick Guide: 
-
-To use ROS, everytime you open a terminal you will need to run: 
->source /opt/ros/humble/setup.bash  
-  
->. install/setup.bash   *do this every time   
- 
->export ROS_ImagePath=/home/yourUsername/Desktop/lame_photos/an_image
-
-
-Or add it the bashrc script to automatically, run this once:  
->echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc  
-
->echo "export ROS_ImagePath=/home/yourUsername/Desktop/lame_photos/" >> ~/.bashrc
-
-
+Contact Shane Stevens smstevens@wpi.edu for more information.

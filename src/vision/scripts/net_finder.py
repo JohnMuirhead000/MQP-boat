@@ -1,86 +1,102 @@
 #!/usr/bin/env python3
-# Basics ROS program to publish real-time streaming 
+# Basics ROS program to publish real-time streaming
 # video from your built-in webcam
-# Author:
-# - Addison Sears-Collins
-# - https://automaticaddison.com
+# Author: Shane Stevens - WPI '23 - smstevens@wpi.edu
 
-import rclpy # Python library for ROS
+import rclpy  # Python library for ROS
 from rclpy.node import Node
 from geometry_msgs.msg import Point
-from sensor_msgs.msg import Image # Image is the message type
-from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
-import cv2 # OpenCV library
-
- 
+from sensor_msgs.msg import Image  # Image is the message type
+from cv_bridge import CvBridge  # Package to convert between ROS and OpenCV Images
+import cv2  # OpenCV library
+import time
+from std_msgs.msg import String
+from blob_detector import *
 from ultralytics import YOLO
 import sys
-
-import time
-
-from std_msgs.msg           import String
-from blob_detector  import *
-
 
 
 class find_net(Node):
 
-  def __init__(self):
+    def __init__(self):
+        super().__init__('net_finder')
 
-    
-    super().__init__('net_finder')
-  
-    self.ball_point = Point()
-    self.model = YOLO("runs/detect/train4/weights/best.pt")  # build a new model from scratch
+        self.net_point = Point()
 
-    #print (">> Publishing image mask to topic /ball_detect/mask")
-    print (">> Publishing Point to topic ball_detect/pont")
+        # Load the Custom YOLO Model
+        self.model = YOLO("runs/detect/train4/weights/best.pt")
 
-   # self.pub_image = self.create_publisher(Image, 'ball_image', 10)
-    self.pub_point = self.create_publisher(Point, '/ball_point', 10)
+        print(">> Publishing Point to topic net_detect/point")
+        print(">> Publishing Image to topic net_detect/image")
+        self.pub_point = self.create_publisher(Point, 'net_detect/point', 10)
+        self.pub_image = self.create_publisher(Image, 'net_detect/image', 10)
 
-    self.bridge = CvBridge()
+        print(">> Subscribed to video_frames")
+        self.sub_frames = self.create_subscription(
+            Image, 'video_frames', self.sub_Frames, 10)
 
-    print (">> Subscribed to video_frames")
-    self.sub = self.create_subscription(Image, 'video_frames', self.pub_coords, 10)
+        # Used to convert between ROS and OpenCV images
+        self.bridge = CvBridge()
 
 
-    
-  def pub_coords(self, msg):
-    point = self.perform_ai(msg)
-    print(">> Found Net at point " + str(round(self.ball_point.x, 3)) +  " , " + str(round (self.ball_point.y, 3)))
-    self.pub_point.publish(point)
+    # Subscribes to video_frames topic and passes frames to perform-ai
+    #   Input: Frame from Camera
+    #   Output: Point (x,y) indicating the location of the net in the frame
 
-  # TODO: takes in an image and returns the point of the object we want
-  def perform_ai(self, image):
-      #--- Assuming image is 320x240
-       # try:
+    def sub_Frames(self, msg):
+        # Get point net is found at (x,y)
+        point = self.find_Net(msg)
+
+        print(">> Found Net at point " + str(round(self.net_point.x, 3)
+                                             ) + " , " + str(round(self.net_point.y, 3)))
+        # Publish the point
+        self.pub_point.publish(point)
+
+
+    # Recieves image and performs Object Recognition
+    #   Input: Frame from Camera
+    #   Output: Point (x,y) indicating the location of the net in the frame
+
+    def find_Net(self, image):
+
+        # Convert ROS image to OpenCV image
         cv_image = self.bridge.imgmsg_to_cv2(image)
-      
-                    
-        results = self.model.predict(source=cv_image, save=True, conf=0.40) 
 
-        #TODO: Make this more robust. Currently Only gets first results
+        # Look for Net in frame
+        results = self.model.predict(source=cv_image, save=True, conf=0.40)
+
+        # TODO: Make this more robust. Currently Only gets first results
         boxes = results[0].boxes
-
         boxCoord_Array = boxes[0].xyxy.numpy()[0]
-    
-        print(f'bottom left: ({boxCoord_Array[0]}, {boxCoord_Array[1]}) top Right: ({boxCoord_Array[2]}, {boxCoord_Array[3]}) ')
-        
-                
-        fps = 1.0/(time.time()-self._t0)
-        self._t0 = time.time()
+
+        print(
+            f'Bottom left: ({boxCoord_Array[0]}, {boxCoord_Array[1]}) Top Right: ({boxCoord_Array[2]}, {boxCoord_Array[3]}) ')
+
+       # Unused
+       # fps = 1.0/(time.time()-self._t0)
+       # self._t0 = time.time()
+
         return self.ball_point
 
-      
+
+# Generally Not used: only if net_finder is being run as the main script
 def main(args=None):
-  rclpy.init(args=args)
 
-  net_node = find_net()
-  rclpy.spin(net_node)
-  net_node.destroy_node()
-  rclpy.shutdown
+    print(">> Net_Finder running as Main")
 
-         
+    # Initialize the rclpy library
+    rclpy.init(args=args)
+
+    # Create Node
+    net_node = find_net()
+
+    # Spin the node so the callback function is called.
+    rclpy.spin(net_node)
+
+    # Clean up
+    net_node.destroy_node()
+    rclpy.shutdown()
+
+
 if __name__ == '__main__':
     main()

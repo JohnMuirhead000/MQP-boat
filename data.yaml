@@ -1,6 +1,6 @@
-train: ../train/images
-val: ../valid/images
-test: ../test/images
+train: /home/shnub/Documents/CV_Training/MQP-boat/Model_Data/train/images
+val: /home/shnub/Documents/CV_Training/MQP-boat/Model_Data/valid/images
+test: /home/shnub/Documents/CV_Training/MQP-boat/Model_Data/train/images
 
 nc: 1
 names: ['net']
@@ -8,6 +8,6 @@ names: ['net']
 roboflow:
   workspace: mqp-boat
   project: net-finder
-  version: 1
+  version: 2
   license: CC BY 4.0
   url: https://universe.roboflow.com/mqp-boat/net-finder/dataset/1

@@ -1,6 +1,9 @@
-train: /home/shnub/Documents/CV_Training/MQP-boat/Model_Data/train/images
-val: /home/shnub/Documents/CV_Training/MQP-boat/Model_Data/valid/images
-test: /home/shnub/Documents/CV_Training/MQP-boat/Model_Data/train/images
+
+# Make sure to change this if on linux!
+train: 'E:\Projects\Model_Dataset\train\images'
+val: 'E:\Projects\Model_Dataset\valid\images'
+test: 'E:\Projects\Model_Dataset\test\images'
+
 
 nc: 1
 names: ['net']

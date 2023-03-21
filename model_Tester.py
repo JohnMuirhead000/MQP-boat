@@ -1,6 +1,4 @@
-import rclpy  # Python library for ROS
-from rclpy.node import Node
-from sensor_msgs.msg import Image  # Image is the message type
+
 from cv_bridge import CvBridge  # Package to convert between ROS and OpenCV Images
 import cv2  # OpenCV library
 from ultralytics import YOLO
@@ -11,7 +9,7 @@ import supervision
 from supervision import Detections, BoxAnnotator, ColorPalette
 
 # Paths
-MODEL_PATH = 'runs/detect/train4/weights/best.pt'
+MODEL_PATH = 'runs/detect/train15/weights/best.pt'
 TEST_IMAGES_PATH = 'Model_Data/test/images'
 ANNOTATED_IMAGE_PATH = "Annotated_Images/"
 ANNOTATED_VIDEO_PATH = "Annotated_Video/"

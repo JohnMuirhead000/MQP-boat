@@ -20,7 +20,7 @@ class moto_logic(Node):
   def __init__(self):
     
     super().__init__('camera')
-    self.publusher = self.create_publisher(Point, 'destination_coords', 10)
+    self.publusher = self.create_publisher(Point, '/ball_point', 10)
 
     while True:
         x_pos = float(input("Trash X: "))

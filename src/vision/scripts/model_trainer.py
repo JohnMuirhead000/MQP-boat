@@ -19,33 +19,3 @@ val = model.val(conf=0.45, save=True)  # evaluate model performance on the valid
 #results = model.predict(source= "0",show=True)  # predict on an webcam...
 
 #https://docs.ultralytics.com/cfg/
-
-# test_net.jp test_NoNet.png test/images
-results = model.predict(source="test/images", save=True,conf=0.40) 
-
-print("Result: " )
-print (results)
-
-
-
-boxes = results[0].boxes
-
-print("Result boxes " )
-print (boxes)
-boxCoord_Array = boxes[0].xyxy.numpy()[0]
-
-print("Coord result: " )
-#print(boxCoord_Array[0])
-print(f'bottom left: ({boxCoord_Array[0]}, {boxCoord_Array[1]}) top Right: ({boxCoord_Array[2]}, {boxCoord_Array[3]}) ')
-
-print ("orig size")
-print(results[0].orig_shape)
-k=input("press close to exit") 
-
-
-
-
-
-
-
-

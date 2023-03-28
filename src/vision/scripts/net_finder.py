@@ -50,7 +50,7 @@ class find_net(Node):
     super().__init__('net_finder')
   
     self.net_point = Point()
-    self.model = YOLO("runs/detect/train15/weights/best.pt")  # build a new model from scratch
+    self.model = YOLO("src/vision/scripts/runs/detect/train15/weights/best.pt")  # build a new model from scratch
 
     
     print (">> Publishing Point to topic /net_detect/point")
@@ -68,8 +68,10 @@ class find_net(Node):
     
   def pub_coords(self, msg):
     point = self.detect_net(msg)
-    print(">> Found Net at point " + str(round(self.net_point.x, 3)) +  " , " + str(round (self.net_point.y, 3)))
-    self.pub_point.publish(point)
+    if (point is not None): 
+      self.pub_point.publish(point)
+    else:
+       print("Point is NONE")
 
   # TODO: takes in an image and returns the point of the object we want
   def detect_net(self, image):
@@ -91,6 +93,9 @@ class find_net(Node):
                 confidence = box.conf.numpy()[0]       # Confidence interval
                 bound_box = box.xyxy.numpy()[0]         # The bounding box xy
                 detected_class=  CLASS_LIST[class_id]
+
+
+
                 # Draw bounding boxes
                 cv2.rectangle(cv_image, (int(bound_box[0]), int(bound_box[1])), (int(
                     bound_box[2]), int(bound_box[3])), BOX_COLORS[class_id], 3)
@@ -105,14 +110,20 @@ class find_net(Node):
 
                 # Convert Iamge
                 self.pub_image.publish(self.bridge.cv2_to_imgmsg(cv_image))
-
-                
                 print(f'Found {detected_class} conf {confidence}  at bottom left: ({bound_box[0]}, {bound_box[1]}) top Right: ({bound_box[2]}, {bound_box[3]}) ')
+                
+                # Find the center of the object
+                x = (bound_box[0] + bound_box[2])/2
+                y = (bound_box[1] + bound_box[3])/2
+
+                self.net_point.x = x
+                self.net_point.y = y
+                return  self.net_point
         else:
             print(f'No Nets found')
 
 
-        return self.net_point
+        return None
 
       
 def main(args=None):

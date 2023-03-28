@@ -20,7 +20,11 @@ import sys
 
 #Arduino stuff
 BAUD_RATE = 9600
+
 COM_PORT = '/dev/ttyACM0'
+MAX_SPEED = 100
+MAX_DRIVE_MOTOR = 1000
+MAX_BELT_MOTOR = 1000
 
 
 class motor_action(Node):
@@ -31,6 +35,7 @@ class motor_action(Node):
     self.ser = serial.Serial(COM_PORT, BAUD_RATE, timeout=1)
     self.ser.reset_input_buffer()
     print("Arduino set up")
+
     self.move_sub = self.create_subscription(Float32MultiArray, 'impeler_move', self.move_motors, 10)
     self.belt_sub = self.create_subscription(Float32, 'belt_move', self.move_belt, 10)
     
@@ -51,21 +56,33 @@ class motor_action(Node):
 
   #TODO: Given left and right motor speeds, send signals to the Arduino to send it that speed
   def run_nav_motors(self, left, right):
-    print("Need to implement 'run_nav_motors'")
-    right_array = bytearray(struct.pack("f", right)) 
-    left_array = bytearray(struct.pack("f", left))
+
+
+    left_motor_percent = int(str((left / MAX_SPEED) * 100)[:2])
+    right_motor_percent = int(str((right / MAX_SPEED) * 100)[:2])
+
+    
+    print("left_motor_percent = " + str(left_motor_percent))
+    print("right_motor_percent = " + str(left_motor_percent))
+
+
+    # 1 means motor controls!
+    message = int(str(1) + str(left_motor_percent) + str(right_motor_percent))
+    print("the message is " + str(message))
+
+    #right_array = bytearray(struct.pack("f", left_motor_percent)) 
+    #left_array = bytearray(struct.pack("f", right_motor_percent))
 
     # send the write bye array and then the left byte array. Always in that order!!! 
-    self.ser.write(right_array)
-    self.ser.write(left_array)
-
-    arduino_out = self.ser.readline()
-    print("arduino_out = " + str(arduino_out))
+    self.ser.write(message.to_bytes(2, byteorder='big'))
+    print("just sent the right array to the arduino!")
+    # self.ser.write(left_array)
   
   #TODO: Given belt motor speed, send signals to the Arduino to send it that speed
   def run_belt_motor(self, speed):
-    print("Need to implement 'run_belt_motor'")
-    self.ser.write(b"B"+str(speed))
+    print("poop")
+    # print("Need to implement 'run_belt_motor'")
+    # self.ser.write(b"B"+str(speed))
 
 
 def main(args=None):

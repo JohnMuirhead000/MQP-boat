@@ -26,6 +26,7 @@ MAX_BELT_MOTOR = 1000
 COM_PORT = '/dev/ttyACM0'
 
 
+
 class motor_action(Node):
   def __init__(self):
 
@@ -34,6 +35,7 @@ class motor_action(Node):
     self.ser = serial.Serial(COM_PORT, BAUD_RATE, timeout=1)
     self.ser.reset_input_buffer()
     print("Arduino set up")
+
     self.move_sub = self.create_subscription(Float32MultiArray, 'impeler_move', self.move_motors, 10)
     self.belt_sub = self.create_subscription(Float32, 'belt_move', self.move_belt, 10)
     
@@ -80,6 +82,7 @@ class motor_action(Node):
     print("poop")
     # print("Need to implement 'run_belt_motor'")
     # self.ser.write(b"B"+str(speed))
+
 
 
 def main(args=None):

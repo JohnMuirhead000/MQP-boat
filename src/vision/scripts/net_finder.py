@@ -34,7 +34,7 @@ class find_net(Node):
     self.model = YOLO("runs/detect/train4/weights/best.pt")  # build a new model from scratch
 
     #print (">> Publishing image mask to topic /ball_detect/mask")
-    print (">> Publishing Point to topic ball_detect/pont")
+    print (">> Publishing Point to topic ball_detect/point")
 
    # self.pub_image = self.create_publisher(Image, 'ball_image', 10)
     self.pub_point = self.create_publisher(Point, '/ball_point', 10)

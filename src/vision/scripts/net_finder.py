@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 # Basics ROS program to publish real-time streaming 
 # video from your built-in webcam
 # Author:
@@ -31,7 +32,7 @@ class find_net(Node):
     super().__init__('net_finder')
   
     self.ball_point = Point()
-    self.model = YOLO("runs/detect/train15/weights/best.pt")  # build a new model from scratch
+    self.model = YOLO("src/vision/scripts/runs/detect/train15/weights/best.pt")  # build a new model from scratch
 
     #print (">> Publishing image mask to topic /ball_detect/mask")
     print (">> Publishing Point to topic ball_detect/point")
@@ -67,9 +68,6 @@ class find_net(Node):
     
         print(f'bottom left: ({boxCoord_Array[0]}, {boxCoord_Array[1]}) top Right: ({boxCoord_Array[2]}, {boxCoord_Array[3]}) ')
         
-                
-        fps = 1.0/(time.time()-self._t0)
-        self._t0 = time.time()
         return self.ball_point
 
       

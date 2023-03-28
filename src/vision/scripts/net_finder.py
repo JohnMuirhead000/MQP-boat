@@ -50,7 +50,7 @@ class find_net(Node):
     super().__init__('net_finder')
   
     self.net_point = Point()
-    self.model = YOLO("src/vision/scripts/runs/detect/train15/weights/best.pt")  # build a new model from scratch
+    self.model = YOLO("src/vision/scripts/runs/detect/trainV2/weights/best.pt")  # build a new model from scratch
 
     
     print (">> Publishing Point to topic /net_detect/point")

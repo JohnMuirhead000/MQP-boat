@@ -243,7 +243,7 @@ if __name__=="__main__":
     blue_max = (101, 255, 255) 
     
     #--- Define area limit [x_min, y_min, x_max, y_max] adimensional (0.0 to 1.0) starting from top left corner
-    window = [0.25, 0.25, 0.65, 0.75]
+    window = [0, 0, 1.0, 1.0]
     
     #-- IMAGE_SOURCE: either 'camera' or 'imagelist'
     #SOURCE = 'video'
@@ -293,7 +293,7 @@ if __name__=="__main__":
             cv2.waitKey(0)
             #-- Draw search window
         
-            image    = draw_frame(image)
+            #image    = draw_frame(image)
             cv2.imshow("Frame", image)
             cv2.waitKey(0)
             

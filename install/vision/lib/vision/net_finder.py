@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 # Basics ROS program to publish real-time streaming 
 # video from your built-in webcam
 # Author:
@@ -10,45 +11,53 @@ from rclpy.node import Node
 from geometry_msgs.msg import Point
 from sensor_msgs.msg import Image # Image is the message type
 from cv_bridge import CvBridge # Package to convert between ROS and OpenCV Images
-import cv2 # OpenCV library
- 
-import sys
-
-import time
-
+import cv2 # OpenCV library 
+from ultralytics import YOLO
+import random
 from std_msgs.msg           import String
-from sensor_msgs.msg        import Image
-from geometry_msgs.msg      import Point
-from cv_bridge              import CvBridge, CvBridgeError
 from blob_detector  import *
+
+
+
+# Constants
+CONFIDENCE_INTERVAL = 0.6
+FRAME_HEIGHT = 640
+FRAME_WIDTH = 480
+
+CLASS_LIST = ["net", "person", "wall", "divider"]
+
+# The colors of each class's bounding box
+BOX_COLORS = []
+for i in range(len(CLASS_LIST)):
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    BOX_COLORS.append((b, g, r))
+
+FONT = cv2.FONT_HERSHEY_TRIPLEX
+FONT_COLOR = (255, 255, 255)  # White
+FONT_SIZE = 1.1             # Float
+FONT_THICKNESS = 2          # Int
+
 
 
 
 class find_net(Node):
 
-  def __init__(self, thr_min, thr_max, blur=15, blob_params=None, detection_window=None):
+  def __init__(self):
 
     
     super().__init__('net_finder')
-    #self.pub = self.create_publisher(Point, 'destination_coords', 10)
-    #self.sub = self.create_subscription(Image, 'video_frames', self.pub_coords, 10)
+  
+    self.net_point = Point()
+    self.model = YOLO("src/vision/scripts/runs/detect/train15/weights/best.pt")  # build a new model from scratch
 
-    self.set_threshold(thr_min, thr_max)
-    self.set_blur(blur)
-    self.set_blob_params(blob_params)
-    self.detection_window = detection_window
     
-    self._t0 = time.time()
-    
-    self.ball_point = Point()
+    print (">> Publishing Point to topic /net_detect/point")
+    print (">> Publishing annotated images to topic /net_detect/image")
 
-    print (">> Publishing image to topic ball_detect/image")
-    print (">> Publishing image mask to topic /ball_detect/mask")
-    print (">> Publishing Point to topic ball_detect/pont")
-
-    self.pub_image = self.create_publisher(Image, 'ball_image', 10)
-    self.pub_mask = self.create_publisher(Image, '/ball_mask', 10)
-    self.pub_point = self.create_publisher(Point, '/ball_point', 10)
+    self.pub_image = self.create_publisher(Image, '/net_detect/image', 10)
+    self.pub_point = self.create_publisher(Point, '/net_detect/point', 10)
 
     self.bridge = CvBridge()
 
@@ -58,113 +67,69 @@ class find_net(Node):
 
     
   def pub_coords(self, msg):
-    point = self.perform_ai(msg)
-    print(">> Found ball at point " + str(round(self.ball_point.x, 3)) +  " , " + str(round (self.ball_point.y, 3)))
-    self.pub_point.publish(point)
+    point = self.detect_net(msg)
+    if (point is not None): 
+      self.pub_point.publish(point)
+    else:
+       print("Point is NONE")
 
   # TODO: takes in an image and returns the point of the object we want
-  def perform_ai(self, image):
-      #--- Assuming image is 320x240
-       # try:
+  def detect_net(self, image):
+        self.net_point = Point()
+     
         cv_image = self.bridge.imgmsg_to_cv2(image)
-        #except CvBridgeError as e:
-           # print(e)
-
-        (rows,cols,channels) = cv_image.shape
-        if cols > 60 and rows > 60 :
-            #--- Detect blobs
-            keypoints, mask   = blob_detect(cv_image, self._threshold[0], self._threshold[1], self._blur,
-                                            blob_params=self._blob_params, search_window=self.detection_window )
-            #--- Draw search window and blobs
-            cv_image    = blur_outside(cv_image, 10, self.detection_window)
-
-            cv_image    = draw_window(cv_image, self.detection_window, line=1)
-            cv_image    = draw_frame(cv_image)
-            
-            cv_image    = draw_keypoints(cv_image, keypoints) 
-            
-            try:
-                self.pub_image.publish(self.bridge.cv2_to_imgmsg(cv_image))
-                self.pub_mask.publish(self.bridge.cv2_to_imgmsg(mask))
-            except CvBridgeError as e:
-                print(e)            
-
-            for i, keyPoint in enumerate(keypoints):
-                #--- Here you can implement some tracking algorithm to filter multiple detections
-                #--- We are simply getting the first result
-                x = keyPoint.pt[0]
-                y = keyPoint.pt[1]
-                s = keyPoint.size
-                #print ("kp %d: s = %3d   x = %3d  y= %3d"%(i, s, x, y))
-                
-                #--- Find x and y position in camera adimensional frame
-                x, y = get_blob_relative_position(cv_image, keyPoint)
-                
-                self.ball_point.x = x
-                self.ball_point.y = y
-                break 
-                
-                
-                    
-            fps = 1.0/(time.time()-self._t0)
-            self._t0 = time.time()
-            return self.ball_point
-
-
-
-  
-  def set_threshold(self, thr_min, thr_max):
-      self._threshold = [thr_min, thr_max]
       
-  def set_blur(self, blur):
-      self._blur = blur
-    
-  def set_blob_params(self, blob_params):
-      self._blob_params = blob_params
+        # Run object detection prediction
+        results = self.model.predict(source=cv_image, save=False, conf=CONFIDENCE_INTERVAL) 
+  
+        # Convert the tensor array to numpy array
+        detection_array = results[0].numpy()
+
+        # For each detection in image, draw bounding box and publish imag
+        if (len(detection_array) != 0):
+            for i in range(len(results[0])):
+                box = results[0].boxes[i]               # Get box
+                class_id = (int)(box.cls.numpy()[0])    # Class id
+                confidence = box.conf.numpy()[0]       # Confidence interval
+                bound_box = box.xyxy.numpy()[0]         # The bounding box xy
+                detected_class=  CLASS_LIST[class_id]
+
+
+
+                # Draw bounding boxes
+                cv2.rectangle(cv_image, (int(bound_box[0]), int(bound_box[1])), (int(
+                    bound_box[2]), int(bound_box[3])), BOX_COLORS[class_id], 3)
+
+                # Display class name and confidence Interval
+                cv2.putText(
+                    cv_image,
+                    CLASS_LIST[class_id] + " - " +
+                    str((int)(confidence*100)) + "%",
+                    (int(bound_box[0]), int(bound_box[1]) - 10),
+                    FONT, FONT_SIZE, FONT_COLOR, FONT_THICKNESS)
+
+                # Convert Iamge
+                self.pub_image.publish(self.bridge.cv2_to_imgmsg(cv_image))
+                print(f'Found {detected_class} conf {confidence}  at bottom left: ({bound_box[0]}, {bound_box[1]}) top Right: ({bound_box[2]}, {bound_box[3]}) ')
+                
+                # Find the center of the object
+                x = (bound_box[0] + bound_box[2])/2
+                y = (bound_box[1] + bound_box[3])/2
+
+                self.net_point.x = x
+                self.net_point.y = y
+                return  self.net_point
+        else:
+            print(f'No Nets found')
+
+
+        return None
+
       
 def main(args=None):
   rclpy.init(args=args)
 
-  ball_HSV_min = (19,26,82)
-  ball_HSV_max = (46, 209, 255) 
-
-  blur     = 5
-  min_size = 10
-  max_size = 40
-  
-  #--- detection window respect to camera frame in [x_min, y_min, x_max, y_max] adimensional (0 to 1)
-  x_min   = 0.1
-  x_max   = 0.9
-  y_min   = 0.4
-  y_max   = 0.9
-  
-  detection_window = [x_min, y_min, x_max, y_max]
-  
-  params = cv2.SimpleBlobDetector_Params()
-        
-  # Change thresholds
-  params.minThreshold = 0
-  params.maxThreshold = 100
-    
-  # Filter by Area.
-  params.filterByArea = True
-  params.minArea = 20
-  params.maxArea = 20000
-    
-  # Filter by Circularity
-  params.filterByCircularity = True
-  params.minCircularity = 0.1
-    
-  # Filter by Convexity
-  params.filterByConvexity = True
-  params.minConvexity = 0.2
-    
-  # Filter by Inertia
-  params.filterByInertia = True
-  params.minInertiaRatio = 0.7   
-
-
-  net_node = find_net(ball_HSV_min, ball_HSV_max, blur, params, detection_window)
+  net_node = find_net()
   rclpy.spin(net_node)
   net_node.destroy_node()
   rclpy.shutdown
@@ -172,3 +137,4 @@ def main(args=None):
          
 if __name__ == '__main__':
     main()
+

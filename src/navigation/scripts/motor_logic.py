@@ -46,6 +46,7 @@ class moto_logic(Node):
 
     #publiish motor stuff
     self.pub_move.publish(float32MultiArray)
+    print("JUST PUBLISHED!")
 
     #Junk Float32 to detrmine if we should move the belt motor
     belt_speed = Float32()
@@ -61,7 +62,7 @@ class moto_logic(Node):
 
     # value subject to change based off of additional motor info
     MAX_SPEED = 100
-    CAMERA_ANGLE_COVERED = 45.21892841 #assume the camera is covering 180 degrees of aread 
+    CAMERA_ANGLE_COVERED = 45.21892841 #assume the camera is covering 45 degrees of aread 
     Y_DEADBAND = 5 #can move foward if it is within 5 degrees of x axis
     SCREEN_WIDTH = 640 # complete guess; absolutly subject to change
     MAX_ANGLE_ERROR = CAMERA_ANGLE_COVERED / 2 # how much can the angle be wrong by 
@@ -82,7 +83,7 @@ class moto_logic(Node):
 
     else:
       left_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
-      right_motor = (rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
+      right_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
 
       print("rotating: left motor = " + str(left_motor) + " right motor = " + str(right_motor))
       return left_motor, right_motor

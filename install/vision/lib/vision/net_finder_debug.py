@@ -17,7 +17,7 @@ class NetFinderDebug(Node):
   
     super().__init__('net_finder_debug')
     self.sub_image = self.create_subscription(Image, 'ball_image', self.process_image,  100)
-    self.sub_mask = self.create_subscription(Image, 'ball_mask', self.process_mask,  100)
+    #self.sub_mask = self.create_subscription(Image, 'ball_mask', self.process_mask,  100)
     
     self.mask_interation = 0
     self.image_interation = 0

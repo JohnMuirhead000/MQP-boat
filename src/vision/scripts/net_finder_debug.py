@@ -16,7 +16,7 @@ class NetFinderDebug(Node):
   def __init__(self):
   
     super().__init__('net_finder_debug')
-    self.sub_image = self.create_subscription(Image, 'ball_image', self.process_image,  100)
+    self.sub_image = self.create_subscription(Image, '/net_detect/image', self.process_image,  100)
     #self.sub_mask = self.create_subscription(Image, 'ball_mask', self.process_mask,  100)
     
     self.mask_interation = 0
@@ -33,7 +33,6 @@ class NetFinderDebug(Node):
       print("Saving Images to: " + str(os.environ.get("ROS_ImagePath"))) #successfully found path
    
     
-    
   # Callback function to process the frames it receives from the Camera.py publisher
   def process_image(self, image):
 
@@ -49,7 +48,7 @@ class NetFinderDebug(Node):
 
     savePath = self.PATH +  "debug_images/" + imgName
 
-    print("Debug: Processing Debug Image -> " + imgName + " @ "  + savePath)
+    print("Debug: Processing Annotated Image -> " + imgName + " @ "  + savePath)
 
     # Write frame to file
     cv2.imwrite(savePath,current_frame)
@@ -59,28 +58,7 @@ class NetFinderDebug(Node):
     self.image_interation = self.image_interation + 1
 
     # Callback function to process the frames it receives from the Camera.py publisher
-  def process_mask(self, image):
-
-    # CVBridge converts between ROS and OpenCV images
-    br = CvBridge()
-    
-    # Convert ROS Image message to OpenCV image
-    current_frame = br.imgmsg_to_cv2(image)
-    
-    # Write Image to file under name "an_image"
-    maskName = "debug_mask" + str(self.mask_interation) + ".png"
-   
-    print("Debug: Processing Mask -> " + maskName + " @ "  +self.PATH)
-    savePath = self.PATH + "debug_masks/" + maskName
-
-    # Write frame to file
-    cv2.imwrite(savePath,current_frame)
-    cv2.waitKey(30)
-
-    # Incement the frame count
-    self.mask_interation = self.mask_interation + 1
-
-
+ 
 def main(args=None):
    rclpy.init(args=args)
    publisher = NetFinderDebug()

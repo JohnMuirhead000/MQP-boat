@@ -50,7 +50,7 @@ class find_net(Node):
     super().__init__('net_finder')
   
     self.net_point = Point()
-    self.model = YOLO("src/vision/scripts/runs/detect/train15/weights/best.pt")  # build a new model from scratch
+    self.model = YOLO("src/vision/scripts/runs/detect/trainV2/weights/best.pt")  # build a new model from scratch
 
     
     print (">> Publishing Point to topic /net_detect/point")
@@ -108,8 +108,7 @@ class find_net(Node):
                     (int(bound_box[0]), int(bound_box[1]) - 10),
                     FONT, FONT_SIZE, FONT_COLOR, FONT_THICKNESS)
 
-                # Convert Iamge
-                self.pub_image.publish(self.bridge.cv2_to_imgmsg(cv_image))
+              
                 print(f'Found {detected_class} conf {confidence}  at bottom left: ({bound_box[0]}, {bound_box[1]}) top Right: ({bound_box[2]}, {bound_box[3]}) ')
                 
                 # Find the center of the object
@@ -118,7 +117,10 @@ class find_net(Node):
 
                 self.net_point.x = x
                 self.net_point.y = y
-                return  self.net_point
+                
+            # After all detections made, export image... but only send 1 of the net locations... For now!!! TODO!!
+            self.pub_image.publish(self.bridge.cv2_to_imgmsg(cv_image))
+            return  self.net_point
         else:
             print(f'No Nets found')
 

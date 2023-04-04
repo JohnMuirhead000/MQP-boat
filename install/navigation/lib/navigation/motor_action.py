@@ -20,11 +20,11 @@ import sys
 
 #Arduino stuff
 BAUD_RATE = 9600
+
+COM_PORT = '/dev/ttyACM0'
 MAX_SPEED = 100
 MAX_DRIVE_MOTOR = 1000
 MAX_BELT_MOTOR = 1000
-COM_PORT = '/dev/ttyACM0'
-
 
 
 class motor_action(Node):
@@ -57,6 +57,7 @@ class motor_action(Node):
   #TODO: Given left and right motor speeds, send signals to the Arduino to send it that speed
   def run_nav_motors(self, left, right):
 
+
     left_motor_percent = int(str((left / MAX_SPEED) * 100)[:2])
     right_motor_percent = int(str((right / MAX_SPEED) * 100)[:2])
 
@@ -77,11 +78,13 @@ class motor_action(Node):
     print("just sent the right array to the arduino!")
     # self.ser.write(left_array)
   
-  #TODO: Given belt motor speed, send signals to the Arduino to send it that speed
   def run_belt_motor(self, speed):
-    print("poop")
-    # print("Need to implement 'run_belt_motor'")
-    # self.ser.write(b"B"+str(speed))
+
+    motor_percent = int(str((speed / MAX_SPEED) * 100)[:2])
+    message = int(str(2) + '0' + '0' + str(right_motor_percent))
+    print("the message is " + str(message))
+    self.ser.write(message.to_bytes(2, byteorder='big'))
+    print("just sent the belt control to the ARDUINO")
 
 
 

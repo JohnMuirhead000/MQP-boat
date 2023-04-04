@@ -20,7 +20,7 @@ from blob_detector  import *
 
 
 # Constants
-CONFIDENCE_INTERVAL = 0.6
+CONFIDENCE_INTERVAL = 0.25
 FRAME_HEIGHT = 640
 FRAME_WIDTH = 480
 

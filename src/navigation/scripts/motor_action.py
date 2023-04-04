@@ -78,11 +78,14 @@ class motor_action(Node):
     print("just sent the right array to the arduino!")
     # self.ser.write(left_array)
   
-  #TODO: Given belt motor speed, send signals to the Arduino to send it that speed
   def run_belt_motor(self, speed):
-    print("poop")
-    # print("Need to implement 'run_belt_motor'")
-    # self.ser.write(b"B"+str(speed))
+
+    motor_percent = int(str((speed / MAX_SPEED) * 100)[:2])
+    message = int(str(2) + '0' + '0' + str(right_motor_percent))
+    print("the message is " + str(message))
+    self.ser.write(message.to_bytes(2, byteorder='big'))
+    print("just sent the belt control to the ARDUINO")
+
 
 
 def main(args=None):

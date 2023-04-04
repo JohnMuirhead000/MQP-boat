@@ -15,7 +15,7 @@ class CamPub(Node):
     
     super().__init__('camera')
     #Initate video capture. 0 is default camera (laptop webcam), 2 is the logitech camera
-    self.cap = cv2.VideoCapture(0)
+    self.cap = cv2.VideoCapture(2)
     self.pub = self.create_publisher(Image, 'video_frames', 100)
     timer_period = 0.1  # 100 miliseconds
     self.timer = self.create_timer(timer_period, self.timer_callback) #timer so we dont take too many pictures. Takes picture every 100ms
@@ -29,7 +29,7 @@ class CamPub(Node):
     if ret == True: #if the capture was successful
 
         #publish the Frames to the video_frames topic
-        print("Publishing image")
+        #print("Publishing image")
         self.pub.publish(br.cv2_to_imgmsg(frame))
 
 def main(args=None):

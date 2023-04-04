@@ -24,11 +24,11 @@ class moto_logic(Node):
 
     print("time to process the point ("+ str(point.x) + ", " + str(point.y) + ", " + str(point.z) + ")")
 
-    left, right = self.find_speed(point)
+    belt, left, right = self.find_speed(point)
 
-    #jumk data Float32MultiArray; probably better to replace with custom message type
     data = [left, right]
 
+    # make the array for the propellers
     multiArrayLayout = MultiArrayLayout()
 
     multiArrayDimension  = MultiArrayDimension()
@@ -44,18 +44,15 @@ class moto_logic(Node):
     float32MultiArray.data = data
     float32MultiArray.layout = multiArrayLayout
 
-    #publiish motor stuff
+    # make the Float32 for the belt 
+    belt_value = Float32()
+    belt_value.data = belt
+
+    #publiish both
     self.pub_move.publish(float32MultiArray)
-    print("JUST PUBLISHED!")
-
-    #Junk Float32 to detrmine if we should move the belt motor
-    belt_speed = Float32()
-
-    #calculation done here
-    belt_speed.data = 0.5
-
-    # publish belt stuff
-    self.pub_belt.publish(belt_speed)
+    print("JUST Moved Propellers!!")
+    self.pub_belt.publish(belt_value)
+    print("Just publushed the belt value ")
 
 
   def find_speed(self, point):
@@ -75,18 +72,24 @@ class moto_logic(Node):
     # be < 0 if we need to rotate counterclockwise, and > 0 if we need to rotate counter clockwise
     rotation_error = ((point.y - (SCREEN_WIDTH/2))*CAMERA_ANGLE_COVERED) / SCREEN_WIDTH
     print("rotation error = " + str(rotation_error))
-    
-    if abs(rotation_error) < Y_DEADBAND:
-      # if we find ourselves here, we are free to move striaght
-      print("going straight: left motor = " + str(MAX_SPEED) + " right motor = " + str(MAX_SPEED))
-      return float(MAX_SPEED), float(MAX_SPEED)
 
-    else:
-      left_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
-      right_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
 
-      print("rotating: left motor = " + str(left_motor) + " right motor = " + str(right_motor))
-      return left_motor, right_motor
+    # TODO SOME LOGIC to DETERMINE IF WE ARE CLOSE ENOUGH TO RUN THE NET TO PCIK IT UP
+    if (CLOSE_ENOUGH){ 
+      # run the belt logic
+      return 50, 0, 0
+
+    } else {
+      if abs(rotation_error) < Y_DEADBAND:
+        # if we find ourselves here, we are free to move striaght
+        print("going straight: left motor = " + str(MAX_SPEED) + " right motor = " + str(MAX_SPEED))
+        return float(MAX_SPEED), float(MAX_SPEED)
+      else:
+        left_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
+        right_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
+        print("rotating: left motor = " + str(left_motor) + " right motor = " + str(right_motor))
+        return 0, left_motor, right_motor
+      }
 
     
 def main(args=None):

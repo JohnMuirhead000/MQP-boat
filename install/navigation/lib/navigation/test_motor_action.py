@@ -22,29 +22,28 @@ class test_motor_action(Node):
     super().__init__('test_motor_action')
     self.pub_move = self.create_publisher(Float32MultiArray, 'impeler_move', 10)
 
-
     while True:
-        left = float(input("left motor test val =  "))
-        right = float(input("left motor test val =  "))
-    data = [left, right]
+      left = float(input("left motor test val =  "))
+      right = float(input("right motor test val =  "))
+      data = [left, right]
 
-    multiArrayLayout = MultiArrayLayout()
+      multiArrayLayout = MultiArrayLayout()
 
-    multiArrayDimension  = MultiArrayDimension()
-    multiArrayDimension.label = "jump label"
-    multiArrayDimension.size = 2
-    multiArrayDimension.stride = 0
-    list = [multiArrayDimension]
+      multiArrayDimension  = MultiArrayDimension()
+      multiArrayDimension.label = "jump label"
+      multiArrayDimension.size = 2
+      multiArrayDimension.stride = 0
+      list = [multiArrayDimension]
 
-    multiArrayLayout.data_offset = 0
-    multiArrayLayout.dim = list
+      multiArrayLayout.data_offset = 0
+      multiArrayLayout.dim = list
 
-    float32MultiArray = Float32MultiArray()
-    float32MultiArray.data = data
-    float32MultiArray.layout = multiArrayLayout
+      float32MultiArray = Float32MultiArray()
+      float32MultiArray.data = data
+      float32MultiArray.layout = multiArrayLayout
 
-    #publiish motor stuff
-    self.pub_move.publish(float32MultiArray)
+      #publiish motor stuff
+      self.pub_move.publish(float32MultiArray)
 
 
   

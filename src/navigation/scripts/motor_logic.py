@@ -12,8 +12,8 @@ from std_msgs.msg import MultiArrayLayout
 class moto_logic(Node):
   def __init__(self):
     
-    super().__init__('camera')
-    self.sub = self.create_subscription(Point, '/ball_point', self.get_speeds, 10)
+    super().__init__('motor_logic')
+    self.sub = self.create_subscription(Point, '/net_detect/point', self.get_speeds, 10)
     self.pub_move = self.create_publisher(Float32MultiArray, 'impeler_move', 10)
     self.pub_belt = self.create_publisher(Float32, 'belt_move', 10)
   

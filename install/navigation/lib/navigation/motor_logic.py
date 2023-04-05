@@ -75,11 +75,12 @@ class moto_logic(Node):
 
 
     # TODO SOME LOGIC to DETERMINE IF WE ARE CLOSE ENOUGH TO RUN THE NET TO PCIK IT UP
-    if (CLOSE_ENOUGH){ 
+    if False: 
       # run the belt logic
       return 50, 0, 0
 
-    } else {
+    else:
+      
       if abs(rotation_error) < Y_DEADBAND:
         # if we find ourselves here, we are free to move striaght
         print("going straight: left motor = " + str(MAX_SPEED) + " right motor = " + str(MAX_SPEED))
@@ -89,7 +90,6 @@ class moto_logic(Node):
         right_motor = -(rotation_error / MAX_ANGLE_ERROR) * MAX_SPEED
         print("rotating: left motor = " + str(left_motor) + " right motor = " + str(right_motor))
         return 0, left_motor, right_motor
-      }
 
     
 def main(args=None):

@@ -17,13 +17,36 @@ class state_machine(Node):
 
 def get_speeds(point):
   # step 1, set the STATE variblae according to the memory:
+
+  memoryArray = []
   with open('myfile.txt', 'r') as f:
     # Read all the lines into a list
     lines = f.readlines()
-    # Print the lines
-    for line in lines:
-      print(line)
+  for line in line:
+    words = line.split()
+    memoryArray.append(words[-1])
+  
+  # memoryArray should now hold 3 things: 
+  # memoryArray = [STATE, NONE, PICKUP]
+  # the first thing is what state it is in
+  # the second thing is how many frames it has seen no net
+  # the third thing is how many frames it has been picking up a net
 
+  state = memoryArray[0]
+
+  
+  # -1 indicates no net was found
+  if point.z = -1:
+    no_net = True
+  else:
+    no_net = False
+    x_pos = point.x
+    y_pos = point.y
+
+  
+  
+
+  
   # step 2, enter the state machine and update it according to the point
 
   # STATE MACHINE: 
@@ -44,6 +67,43 @@ def get_speeds(point):
     # if it has been picking it up for enough frames (maybe 100) assume the item is picked up
     # and enter the searching state. Otherwise, go fuck urself hahaha but srsly otherwise keep 
     # moving the belt motors. keep writing STOP to the 
+
+    if state == "SEARCHING":
+
+      if no_net:
+        # we still have not found a net
+        new_none = int(memoryArray[1]) + 1
+        # keep spinning and update the memory with the new NONE value
+
+      else:
+        # we found the NET!
+        # move according to the move logic
+        # update the memory NONE as 0
+        # update the state to MOVE
+
+      print("searching logic")
+
+    elif state == "MOVE":
+
+      if no_net:
+        # assume we are only here because we missed a frame
+        # dont write anyhting to the motors, use the last value
+      else:
+        # move according to the move logic
+
+      print("move logic")
+
+    elif state == "PICKUP":
+
+      if memoryArray[2] < 100: 
+        # keep picking up! write to sim motors!
+        newPickup = int(memoryArray[2]) + 1
+        # also wite the newPickup to the memory file
+      else:
+        # we have been running this for 10 seconds. 
+        # stop the sim motors and go to the searching state
+
+      print("pickup logic")
 
 
 def main(args=None):

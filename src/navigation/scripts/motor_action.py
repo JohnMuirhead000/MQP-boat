@@ -56,22 +56,15 @@ class motor_action(Node):
 
   #TODO: Given left and right motor speeds, send signals to the Arduino to send it that speed
   def run_nav_motors(self, left, right):
-
-
-    left_motor_percent = int(str((left / MAX_SPEED) * 100)[:2])
-    right_motor_percent = int(str((right / MAX_SPEED) * 100)[:2])
-
     
-    print("left_motor_percent = " + str(left_motor_percent))
-    print("right_motor_percent = " + str(left_motor_percent))
+    print("left_motor_percent = " + str(left))
+    print("right_motor_percent = " + str(right))
 
 
     # 1 means motor controls!
-    message = int(str(1) + str(left_motor_percent) + str(right_motor_percent))
+    message = int(str(1) + str(left) + str(right))
     print("the message is " + str(message))
 
-    #right_array = bytearray(struct.pack("f", left_motor_percent)) 
-    #left_array = bytearray(struct.pack("f", right_motor_percent))
 
     # send the write bye array and then the left byte array. Always in that order!!! 
     self.ser.write(message.to_bytes(2, byteorder='big'))
@@ -79,9 +72,7 @@ class motor_action(Node):
     # self.ser.write(left_array)
   
   def run_belt_motor(self, speed):
-
-    motor_percent = int(str((speed / MAX_SPEED) * 100)[:2])
-    message = int(str(2) + '0' + '0' + str(right_motor_percent))
+    message = int(str(2) + '0' + '0' + str(speed))
     print("the message is " + str(message))
     self.ser.write(message.to_bytes(2, byteorder='big'))
     print("just sent the belt control to the ARDUINO")

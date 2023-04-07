@@ -123,6 +123,12 @@ class find_net(Node):
             return  self.net_point
         else:
             print(f'No Nets found')
+            self.net_point.x = 0
+            self.net_point.y = 0
+            # -1 on z indicates no net
+            self.net_point.z = -1
+            return self.net_point
+
 
 
         return None

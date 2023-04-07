@@ -75,9 +75,7 @@ class state_machine(Node):
           # we still have not found a net
           no_net_count = int(memoryArray[1]) + 1
           write_memory("MOVE", no_net_count, 0)
-
-          # write values to keep it moving in a circle 
-
+          # TODO write code to move it in a circle
         else:
           print("found a net in searching state")
           write_memory("MOVE", 0, 0)
@@ -87,53 +85,56 @@ class state_machine(Node):
         if no_net:
 
           print("found no net in the moving state")
-          no_net_count = int(memoryArray) + 1
+          no_net_count = int(memoryArray[1]) + 1
 
-          if no_net_count > 100
+          if no_net_count > 100:
+            print("we are moiving, but have not seen a net for 100 frames; back to searching")
             # in here if we have not seen a net for 10 seconds
             write_memory("SEARCHING", no_net_count, 0)
           else:
+            print("we are moiving, but have not seen a net, but will assume we just missed a frame")
             # assume we have a net in target but just missed for a frame
             write_memory("MOVE", no_net_count, 0)
-            # keep the previous motor controls
 
         else:
+          print("found a net in the move state ")
+          no_net_count = int(memoryArray[1]) + 1
 
           if activate_belt(x_pos, y_pos):
+            print("was moving now its time to pick up the NET")
             # if it is time to activate the belt motors
             write_memory("PICKUP", 0, 1)
+            # TODO write code to start belt motors. STOP the other motors
           else: 
-
-            write_memory("MOVE", no_net_count, 0)
-            left_motor, right_motor = move_logic(x_pos, y_pos)
-          # move according to the move logic
-
-        print("move logic")
+            print("found a net while moving. Will keep moving")
+            write_memory("MOVE", 0, 0)
+            speeds = [left_motor, right_motor] = move_logic(x_pos, y_pos)
+            # TODO write code to naviagte the bot to the net
 
       elif state == "PICKUP":
 
         if memoryArray[2] < 100: 
+          print("still picking up")
           # keep picking up! write to sim motors!
           newPickup = int(memoryArray[2]) + 1
-          write_memory("PICKUP", 0, int(memoryArray[2]) + 1)
-          # also wite the newPickup to the memory file
+          write_memory("PICKUP", 0, newPickup)
         else:
           print("we have beem picking up for 100 frames")
-          write_memory("SEARCHING" 0, 0)
+          write_memory("SEARCHING", 0, 0)
           # we have been running this for 10 seconds. 
           # stop the sim motors and go to the searching state
 
-        print("pickup logic")
-
+# this function takes in the x pos and the y pose and detemrines if we are in the correct place to pick up the NET
 def activate_belt(x_pos, y_pos):
   print("send code to run the belt")
   # if we are close enough to the net, return True
   # otherwise return false!
 
 
-  # this function assumes a net has been found and assumes we are not using the belt rn
+# this function assumes a net has been found and assumes we are not using the belt rn
 def move_logic(x_pos, y_pos):
   print("send code to move to TRASH")
+  return [10, 10]
   # if the belt is within a certian deadband, move foward
   # otherwise turn to the side 
 
@@ -141,7 +142,7 @@ def move_logic(x_pos, y_pos):
 def write_memory(state, no_nets, pickups):
   os.remove("/home/parallels/git/MQP-boat/src/navigation/scripts/memory.txt")
   # rewrite the memoru for the nect iteration
-  with open('/home/parallels/git/MQP-boat/src/navigation/scripts/memory.txt"', 'w') as f:
+  with open("/home/parallels/git/MQP-boat/src/navigation/scripts/memory.txt", 'w') as f:
     f.write('STATE = ' + state + '\n')
     f.write('NONE = ' + str(no_nets) + '\n')
     f.write('PICKUP = ' + str(pickups) + '\n')

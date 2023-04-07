@@ -73,38 +73,30 @@ class state_machine(Node):
 
         if no_net:
           # we still have not found a net
-          no_net_count = int(memoryArray[1]) + 1
-          write_memory("MOVE", no_net_count, 0)
-
-          # write values to keep it moving in a circle 
+          new_none = int(memoryArray[1]) + 1
+          # keep spinning and update the memory with the new NONE value
 
         else:
           print("found a net in searching state")
-          write_memory("MOVE", 0, 0)
+
+          # we found the NET!
+          # move according to the move logic
+          # update the memory NONE as 0
+          # update the state to MOVE
+          write_memory("POOP", 4, 3)
 
       elif state == "MOVE":
 
         if no_net:
-
           print("found no net in the moving state")
-          no_net_count = int(memoryArray) + 1
-
-          if no_net_count > 100
-            # in here if we have not seen a net for 10 seconds
-            write_memory("SEARCHING", no_net_count, 0)
-          else:
-            # assume we have a net in target but just missed for a frame
-            write_memory("MOVE", no_net_count, 0)
-            # keep the previous motor controls
-
+          # assume we are only here because we missed a frame
+          # dont write anyhting to the motors, use the last value
         else:
 
           if activate_belt(x_pos, y_pos):
             # if it is time to activate the belt motors
             write_memory("PICKUP", 0, 1)
           else: 
-
-            write_memory("MOVE", no_net_count, 0)
             left_motor, right_motor = move_logic(x_pos, y_pos)
           # move according to the move logic
 
@@ -115,27 +107,25 @@ class state_machine(Node):
         if memoryArray[2] < 100: 
           # keep picking up! write to sim motors!
           newPickup = int(memoryArray[2]) + 1
-          write_memory("PICKUP", 0, int(memoryArray[2]) + 1)
           # also wite the newPickup to the memory file
         else:
           print("we have beem picking up for 100 frames")
-          write_memory("SEARCHING" 0, 0)
           # we have been running this for 10 seconds. 
           # stop the sim motors and go to the searching state
 
         print("pickup logic")
 
-def activate_belt(x_pos, y_pos):
-  print("send code to run the belt")
-  # if we are close enough to the net, return True
-  # otherwise return false!
+  def activate_belt(x_pos, y_pos):
+    print("send code to run the belt")
+    # if we are close enough to the net, return True
+    # otherwise return false!
 
 
   # this function assumes a net has been found and assumes we are not using the belt rn
-def move_logic(x_pos, y_pos):
-  print("send code to move to TRASH")
-  # if the belt is within a certian deadband, move foward
-  # otherwise turn to the side 
+  def move_logic(x_pos, y_pos):
+    print("send code to move to TRASH")
+    # if the belt is within a certian deadband, move foward
+    # otherwise turn to the side 
 
 
 def write_memory(state, no_nets, pickups):

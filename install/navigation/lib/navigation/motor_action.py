@@ -40,8 +40,9 @@ class motor_action(Node):
     self.belt_sub = self.create_subscription(Float32, 'belt_move', self.move_belt, 10)
     
   def move_motors(self, speeds):
-    left_speed = speeds.data[0]
-    right_speed = speeds.data[1]
+    left_speed = int(speeds.data[0])
+    right_speed = int(speeds.data[1])
+
     print("the speed to send the motors, (left, right) is (" + str(left_speed) +", "  + str(right_speed) + ")")
     self.run_nav_motors(left_speed, right_speed)
 
@@ -56,22 +57,26 @@ class motor_action(Node):
 
   #TODO: Given left and right motor speeds, send signals to the Arduino to send it that speed
   def run_nav_motors(self, left, right):
-
-
-    left_motor_percent = int(str((left / MAX_SPEED) * 100)[:2])
-    right_motor_percent = int(str((right / MAX_SPEED) * 100)[:2])
-
     
-    print("left_motor_percent = " + str(left_motor_percent))
-    print("right_motor_percent = " + str(left_motor_percent))
+    print("left_motor_percent = " + str(left))
+    print("right_motor_percent = " + str(right))
+
+
+    if len(str(left)) == 1:
+      left_buf = "0"
+    else:
+      left_buf = ""
+
+    if len(str(right)) == 1:
+      right_buf = "0"
+    else:
+      right_buf = ""
 
 
     # 1 means motor controls!
-    message = int(str(1) + str(left_motor_percent) + str(right_motor_percent))
+    message = int(str(1) + left_buf + str(left) + right_buf +str(right))
     print("the message is " + str(message))
 
-    #right_array = bytearray(struct.pack("f", left_motor_percent)) 
-    #left_array = bytearray(struct.pack("f", right_motor_percent))
 
     # send the write bye array and then the left byte array. Always in that order!!! 
     self.ser.write(message.to_bytes(2, byteorder='big'))
@@ -79,9 +84,7 @@ class motor_action(Node):
     # self.ser.write(left_array)
   
   def run_belt_motor(self, speed):
-
-    motor_percent = int(str((speed / MAX_SPEED) * 100)[:2])
-    message = int(str(2) + '0' + '0' + str(right_motor_percent))
+    message = int(str(2) + '0' + '0' + str(speed))
     print("the message is " + str(message))
     self.ser.write(message.to_bytes(2, byteorder='big'))
     print("just sent the belt control to the ARDUINO")

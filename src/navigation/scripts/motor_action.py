@@ -40,8 +40,9 @@ class motor_action(Node):
     self.belt_sub = self.create_subscription(Float32, 'belt_move', self.move_belt, 10)
     
   def move_motors(self, speeds):
-    left_speed = speeds.data[0]
-    right_speed = speeds.data[1]
+    left_speed = int(speeds.data[0])
+    right_speed = int(speeds.data[1])
+
     print("the speed to send the motors, (left, right) is (" + str(left_speed) +", "  + str(right_speed) + ")")
     self.run_nav_motors(left_speed, right_speed)
 
@@ -61,8 +62,19 @@ class motor_action(Node):
     print("right_motor_percent = " + str(right))
 
 
+    if len(str(left)) == 1:
+      left_buf = "0"
+    else:
+      left_buf = ""
+
+    if len(str(right)) == 1:
+      right_buf = "0"
+    else:
+      right_buf = ""
+
+
     # 1 means motor controls!
-    message = int(str(1) + str(left) + str(right))
+    message = int(str(1) + left_buf + str(left) + right_buf +str(right))
     print("the message is " + str(message))
 
 

@@ -13,8 +13,8 @@ import math
 
 LEFT = 0
 RIGHT = 640
-BOTTOM = 0
-TOP = 400
+BOTTOM = 480
+TOP = 0
 
 class state_machine(Node):
   def __init__(self):
@@ -116,13 +116,15 @@ class state_machine(Node):
         else: 
           print("found a net while moving. Will keep moving")
           write_memory('MOVE', 0, 0)
+          print("x_pos = " + str(x_pos))
+          print("y_pos = " + str(y_pos))
           [left_motor, right_motor] = move_logic(x_pos, y_pos)
 
           # TODO write code to naviagte the bot to the net
 
     elif state == 'PICKUP':
 
-      if memoryArray[2] < 100: 
+      if int(memoryArray[2]) < 100: 
         print("still picking up")
         # keep picking up! write to sim motors!
         newPickup = int(memoryArray[2]) + 1
@@ -136,7 +138,6 @@ class state_machine(Node):
 
 
   def move_motors(self, left, right):
-    print("cirlce ityme")
     #make the array for the propellers
     multiArrayLayout = MultiArrayLayout()
 
@@ -158,7 +159,7 @@ class state_machine(Node):
 # this function takes in the x pos and the y pose and detemrines if we are in the correct place to pick up the NET
 def activate_belt(x_pos, y_pos):
   print("send code to run the belt")
-  return y_pos =< TOP / 5 and x_pos => LEFT * .25 and x_pos =< LEFT * .75
+  return y_pos >= BOTTOM*.1 and x_pos >= RIGHT * .35 and x_pos <= RIGHT * .65
 
 
 # this function assumes a net has been found and assumes we are not using the belt rn
@@ -181,15 +182,17 @@ def move_logic(x_pos, y_pos):
 
     if in_middle_quad(x_pos, y_pos):
       # are int the middle slice
-       y_from_line = abs(y_pos - TOP*.25)
-       max_y = TOP*.25
+       y_from_line = abs(y_pos - BOTTOM*.75)
+       max_y = BOTTOM*.75
        return ([int((100*y_from_line) / max_y)], [int((100*y_from_line) / max_y)])
        
     else: 
 
       if x_pos < RIGHT / 2:
+        print("pee")
         # we are in the left quadrat
       elif x_pos > RIGHT / 2:
+        print("poop")
         # we are in the right quadrant
       else: 
         # we should never be here!
@@ -206,7 +209,7 @@ def move_logic(x_pos, y_pos):
     in_radians = math.radians(reflection_angle)
 
     orig_x = RIGHT/2
-    orig_y = TOP * .25
+    orig_y = BOTTOM*.75
 
     x_from_orig = abs(x_pos - orig_x)
     y_from_orig = abs(y_pos - orig_y)

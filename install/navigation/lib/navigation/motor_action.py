@@ -26,6 +26,11 @@ MAX_SPEED = 100
 MAX_DRIVE_MOTOR = 1000
 MAX_BELT_MOTOR = 1000
 
+LEFT = 0
+RIGHT = 640
+BOTTOM = 0
+TOP = 400
+
 
 class motor_action(Node):
   def __init__(self):
@@ -81,7 +86,6 @@ class motor_action(Node):
     # send the write bye array and then the left byte array. Always in that order!!! 
     self.ser.write(message.to_bytes(2, byteorder='big'))
     print("just sent the right array to the arduino!")
-    # self.ser.write(left_array)
   
   def run_belt_motor(self, speed):
     message = int(str(2) + '0' + '0' + str(speed))

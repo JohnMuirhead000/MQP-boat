@@ -22,6 +22,7 @@ class state_machine(Node):
     super().__init__('state_machine')
     self.sub = self.create_subscription(Point, '/net_detect/point', self.get_speeds, 10)
     self.pub_move = self.create_publisher(Float32MultiArray, 'impeler_move', 10)
+    self.pub_belt = self.create_publisher(Float32, 'belt_move', 10)
 
   def get_speeds(self, point):
     # step 1, set the STATE variblae according to the memory:
@@ -77,64 +78,52 @@ class state_machine(Node):
 
 
     if state == 'SEARCHING':
-      print("in the searching state")
       if no_net:
-        print("found no net in the searching state, moving in a circle")
         # we still have not found a net
         no_net_count = int(memoryArray[1]) + 1
         write_memory('SEARCHING', no_net_count, 0)
         self.move_motors(float(50), float(0))
       else:
-        print("found a net in searching state")
         write_memory('MOVE', 0, 0)
 
     elif state == 'MOVE':
 
       if no_net:
 
-        print("found no net in the moving state")
         no_net_count = int(memoryArray[1]) + 1
 
         if no_net_count > 20:
-          print("we are moiving, but have not seen a net for 20 frames; back to searching")
           # in here if we have not seen a net for 10 seconds
           write_memory("SEARCHING", no_net_count, 0)
         else:
-          print("we are moiving, but have not seen a net, but will assume we just missed a frame")
           # assume we have a net in target but just missed for a frame
           write_memory('MOVE', no_net_count, 0)
 
       else:
-        print("found a net in the move state ")
         no_net_count = int(memoryArray[1]) + 1
 
         if activate_belt(x_pos, y_pos):
-          print("was moving now its time to pick up the NET")
           # if it is time to activate the belt motors
           write_memory('PICKUP', 0, 1)
-          # TODO write code to start belt motors. STOP the other motors
+
         else: 
-          print("found a net while moving. Will keep moving")
           write_memory('MOVE', 0, 0)
           print("x_pos = " + str(x_pos))
           print("y_pos = " + str(y_pos))
           [left_motor, right_motor] = move_logic(x_pos, y_pos)
-
-          # TODO write code to naviagte the bot to the net
+          self.move_motors(left_motor, right_motor)
 
     elif state == 'PICKUP':
 
-      if int(memoryArray[2]) < 100: 
-        print("still picking up")
+      if int(memoryArray[2]) < 20: 
         # keep picking up! write to sim motors!
         newPickup = int(memoryArray[2]) + 1
         write_memory("PICKUP", 0, newPickup)
-        # TODO write code to activate MOTORS
+        self.move_motors(0, 0)
+        self.move_belt(20)
       else:
-        print("we have beem picking up for 100 frames")
         write_memory("SEARCHING", 0, 0)
-        # we have been running this for 10 seconds. 
-        # stop the sim motors and go to the searching state
+        self.move_belt(0)
 
 
   def move_motors(self, left, right):
@@ -151,31 +140,34 @@ class state_machine(Node):
     multiArrayLayout.dim = list
 
     float32MultiArray = Float32MultiArray()
-    float32MultiArray.data = [left, right]
+    float32MultiArray.data = [float(left), float(right)]
     float32MultiArray.layout = multiArrayLayout
 
     self.pub_move.publish(float32MultiArray)
 
+  def move_belt(self, speed):
+    #make the array for the propellers
+    float32 = Float32()
+    float32.data = float(speed)
+    self.pub_belt.publish(float32)
+
 # this function takes in the x pos and the y pose and detemrines if we are in the correct place to pick up the NET
 def activate_belt(x_pos, y_pos):
-  print("send code to run the belt")
-  return y_pos >= BOTTOM*.1 and x_pos >= RIGHT * .35 and x_pos <= RIGHT * .65
+  return y_pos >= BOTTOM*.9 and x_pos >= RIGHT * .35 and x_pos <= RIGHT * .65
 
 
 # this function assumes a net has been found and assumes we are not using the belt rn
 def move_logic(x_pos, y_pos):
-  print("send code to move to TRASH")
 
   # check if we are close
-  if y_pos <= TOP / 5:
-    if x_pos < RIGHT * .25:
+  if y_pos >= BOTTOM * .9:
+    if x_pos < RIGHT * .35:
       # net in bottom left of screen; just move right side 
       return [0, 30]
-    if x_pos > RIGHT * .75:
+    if x_pos > RIGHT * .65:
       return [30, 0]
     else:
       # the code should NEVER be here
-      print("in a place we should never be")
       return [10, 10]
 
     # check if we are not close
@@ -183,17 +175,49 @@ def move_logic(x_pos, y_pos):
     if in_middle_quad(x_pos, y_pos):
       # are int the middle slice
        y_from_line = abs(y_pos - BOTTOM*.75)
-       max_y = BOTTOM*.75
+       max_y = BOTTOM*.9
        return ([int((100*y_from_line) / max_y)], [int((100*y_from_line) / max_y)])
        
     else: 
 
+      # we are in the left quadrat
+      orig_x = RIGHT/2
+      orig_y = BOTTOM*.9
+
+      x_from_orig = abs(x_pos - orig_x)
+      y_from_orig = abs(y_pos - orig_y)
+
+      x_percent_error = int((100 * x_from_orig) / (RIGHT * .5))
+      y_percent_error = int((100 * y_from_orig) / (BOTTOM * .9))
+
+      max_distance = math.sqrt(orig_x * orig_x + orig_y * orig_y)
+
+      actual_distance = math.sqrt(x_from_orig * x_from_orig + y_from_orig * y_from_orig)
+
+      percent_distance_error = int((100 * actual_distance) / max_distance)
+
       if x_pos < RIGHT / 2:
-        print("pee")
-        # we are in the left quadrat
+
+
+        left_p = x_percent_error * .5  + 50
+        right_p = 100 - left_p
+        # the motor speeds sum to the percent_distance_error 
+
+        left = left_p * percent_distance_error
+        right = right_p * percent_distance_error
+
+        print("trying to move right; left = " + str(left) + " right = " + str(right))
+
       elif x_pos > RIGHT / 2:
-        print("poop")
-        # we are in the right quadrant
+        right_p = x_percent_error * .5  + 50
+        left_p = 100 - right_p
+       # the motor speeds sum to the percent_distance_error 
+
+        left = left_p * percent_distance_error
+        right = right_p * percent_distance_error
+        print("trying to move right; left = " + str(left) + " right = " + str(right))
+
+        return [left, right]
       else: 
         # we should never be here!
         return [0, 0] 

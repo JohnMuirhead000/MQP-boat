@@ -62,7 +62,7 @@ class find_net(Node):
     self.bridge = CvBridge()
 
     print (">> Subscribed to video_frames")
-    self.sub = self.create_subscription(Image, 'video_frames', self.pub_coords, 10)
+    self.sub = self.create_subscription(Image, 'video_frames', self.pub_coords, 100)
 
 
     

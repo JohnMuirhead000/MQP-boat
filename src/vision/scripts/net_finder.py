@@ -78,7 +78,8 @@ class find_net(Node):
         self.net_point = Point()
      
         cv_image = self.bridge.imgmsg_to_cv2(image)
-      
+
+        cv_image = cv2.resize(cv_image, (FRAME_WIDTH, FRAME_HEIGHT))
         # Run object detection prediction
         results = self.model.predict(source=cv_image, save=False, conf=CONFIDENCE_INTERVAL) 
   

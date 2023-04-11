@@ -14,4 +14,4 @@ echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 
 echo "export ROS_ImagePath=/home/yourUsername/Desktop/lame_photos/" >> ~/.bashrc
 
-echo "export ROS_videoPath=/home/yourUsername/Desktop/videoName/" >> ~/.bashrc
+echo "export ROS_VideoPath=/home/yourUsername/Desktop/videoName/" >> ~/.bashrc

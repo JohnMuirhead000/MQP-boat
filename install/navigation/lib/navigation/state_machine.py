@@ -227,7 +227,7 @@ def move_logic(x_pos, y_pos):
       return [left, right]
 
     else: 
-      print("FUCK YUO")
+      print("SHOULD NOT BE HERE")
       # we should never be here!
       return [0, 0] 
         
@@ -238,7 +238,7 @@ def move_logic(x_pos, y_pos):
 
 def in_middle_quad(x_pos, y_pos):
 
-  reflection_angle = 89
+  reflection_angle = 10
   in_radians = math.radians(reflection_angle)
   print("in randians = " + str(in_radians))
 

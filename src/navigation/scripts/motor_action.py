@@ -56,7 +56,7 @@ class motor_action(Node):
 
   def move_belt(self, speed):
     print("the speed to send the belt is" + str(speed))
-    self.run_belt_motor(speed)
+    self.run_belt_motor(int(speed.data))
 
     # send the propper signals to the outputs
 

@@ -118,7 +118,7 @@ class state_machine(Node):
 
     elif state == 'PICKUP':
 
-      if int(memoryArray[2]) < 20: 
+      if int(memoryArray[2]) < 3: 
         # keep picking up! write to sim motors!
         newPickup = int(memoryArray[2]) + 1
         write_memory("PICKUP", 0, newPickup)
@@ -238,7 +238,7 @@ def move_logic(x_pos, y_pos):
 
 def in_middle_quad(x_pos, y_pos):
 
-  reflection_angle = 30
+  reflection_angle = 10
   in_radians = math.radians(reflection_angle)
   print("in randians = " + str(in_radians))
 

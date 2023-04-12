@@ -90,6 +90,8 @@ class state_machine(Node):
 
       if no_net:
 
+        print("FOUND NO NET")
+
         no_net_count = int(memoryArray[1]) + 1
 
         if no_net_count > 20:
@@ -107,6 +109,7 @@ class state_machine(Node):
           write_memory('PICKUP', 0, 1)
 
         else: 
+          print("FOUND A NET WHILE MOVING")
           write_memory('MOVE', 0, 0)
           print("x_pos = " + str(x_pos))
           print("y_pos = " + str(y_pos))
@@ -159,8 +162,11 @@ def activate_belt(x_pos, y_pos):
 # this function assumes a net has been found and assumes we are not using the belt rn
 def move_logic(x_pos, y_pos):
 
+  print("ACTIVATINF MOVE LOGIX")
+
   # check if we are close
   if y_pos >= BOTTOM * .9:
+    print("IN THE CORNER")
     if x_pos < RIGHT * .35:
       # net in bottom left of screen; just move right side 
       return [0, 30]
@@ -171,75 +177,84 @@ def move_logic(x_pos, y_pos):
       return [10, 10]
 
     # check if we are not close
+  else: 
 
     if in_middle_quad(x_pos, y_pos):
       # are int the middle slice
-       y_from_line = abs(y_pos - BOTTOM*.75)
-       max_y = BOTTOM*.9
-       return ([int((100*y_from_line) / max_y)], [int((100*y_from_line) / max_y)])
-       
-    else: 
+      y_from_line = abs(y_pos - BOTTOM*.75)
+      print("IN THE MIDDLE QUADD")
+      max_y = BOTTOM*.9
+      return ([int((100*y_from_line) / max_y), int((100*y_from_line) / max_y)])   
 
-      # we are in the left quadrat
-      orig_x = RIGHT/2
-      orig_y = BOTTOM*.9
+    # we are in the left or right quadrat
+    orig_x = RIGHT/2
+    orig_y = BOTTOM*.9
 
-      x_from_orig = abs(x_pos - orig_x)
-      y_from_orig = abs(y_pos - orig_y)
+    x_from_orig = abs(x_pos - orig_x)
+    y_from_orig = abs(y_pos - orig_y)
 
-      x_percent_error = int((100 * x_from_orig) / (RIGHT * .5))
-      y_percent_error = int((100 * y_from_orig) / (BOTTOM * .9))
+    x_percent_error = int((100 * x_from_orig) / (RIGHT * .5))
+    y_percent_error = int((100 * y_from_orig) / (BOTTOM * .9))
 
-      max_distance = math.sqrt(orig_x * orig_x + orig_y * orig_y)
+    max_distance = math.sqrt(orig_x * orig_x + orig_y * orig_y)
 
-      actual_distance = math.sqrt(x_from_orig * x_from_orig + y_from_orig * y_from_orig)
+    actual_distance = math.sqrt(x_from_orig * x_from_orig + y_from_orig * y_from_orig)
 
-      percent_distance_error = int((100 * actual_distance) / max_distance)
+    percent_distance_error = int((100 * actual_distance) / max_distance)
 
-      if x_pos < RIGHT / 2:
+    if x_pos < RIGHT / 2:
 
 
-        left_p = x_percent_error * .5  + 50
-        right_p = 100 - left_p
-        # the motor speeds sum to the percent_distance_error 
+      right_p = x_percent_error * .5  + 50
+      left_p = 100 - right_p
+      # the motor speeds sum to the percent_distance_error 
 
-        left = left_p * percent_distance_error
-        right = right_p * percent_distance_error
+      left = (left_p * percent_distance_error) / 100
+      right = (right_p * percent_distance_error) / 100
 
-        print("trying to move right; left = " + str(left) + " right = " + str(right))
+      print("trying to move left; left = " + str(left) + " right = " + str(right))
 
-      elif x_pos > RIGHT / 2:
-        right_p = x_percent_error * .5  + 50
-        left_p = 100 - right_p
+    elif x_pos > RIGHT / 2:
+
+      left_p = x_percent_error * .5  + 50
+      right_p = 100 - left_p
        # the motor speeds sum to the percent_distance_error 
 
-        left = left_p * percent_distance_error
-        right = right_p * percent_distance_error
-        print("trying to move right; left = " + str(left) + " right = " + str(right))
+      left = (left_p * percent_distance_error) / 100
+      right = (right_p * percent_distance_error) / 100
+      print("trying to move right; left = " + str(left) + " right = " + str(right))
 
-        return [left, right]
-      else: 
-        # we should never be here!
-        return [0, 0] 
+      return [left, right]
+
+    else: 
+      print("SHOULD NOT BE HERE")
+      # we should never be here!
+      return [0, 0] 
         
   return [10, 10]
   # if the belt is within a certian deadband, move foward
   # otherwise turn to the side 
 
 
-  def in_middle_quad(x_pos, y_pos):
+def in_middle_quad(x_pos, y_pos):
 
-    reflection_angle = 30
-    in_radians = math.radians(reflection_angle)
+  reflection_angle = 30
+  in_radians = math.radians(reflection_angle)
+  print("in randians = " + str(in_radians))
 
-    orig_x = RIGHT/2
-    orig_y = BOTTOM*.75
+  orig_x = RIGHT/2
+  orig_y = BOTTOM*.9
 
-    x_from_orig = abs(x_pos - orig_x)
-    y_from_orig = abs(y_pos - orig_y)
+  
 
-    # will return true if we are the the middle slice!!!
-    return x_from_orig <= math.tan(in_radians) * y_from_orig
+  x_from_orig = abs(x_pos - orig_x)
+  y_from_orig = abs(y_pos - orig_y)
+
+  print("orig_x = " + str(orig_x) + " orig_y = " + str(orig_y) + " x_from_orig = " + str(x_from_orig) + " y_from_orig = " + str(y_from_orig))
+
+
+  # will return true if we are the the middle slice!!!
+  return x_from_orig <= math.tan(in_radians) * y_from_orig
 
 
 def write_memory(state, no_nets, pickups):

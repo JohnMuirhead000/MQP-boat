@@ -118,7 +118,7 @@ class state_machine(Node):
 
     elif state == 'PICKUP':
 
-      if int(memoryArray[2]) < 20: 
+      if int(memoryArray[2]) < 3: 
         # keep picking up! write to sim motors!
         newPickup = int(memoryArray[2]) + 1
         write_memory("PICKUP", 0, newPickup)

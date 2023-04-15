@@ -25,6 +25,7 @@ class test_motor_action(Node):
     while True:
       left = float(input("left motor test val =  "))
       right = float(input("right motor test val =  "))
+      belt = float(input("motor percent val =  "))
       data = [left, right]
 
       multiArrayLayout = MultiArrayLayout()

@@ -28,7 +28,7 @@ class state_machine(Node):
     # step 1, set the STATE variblae according to the memory:
 
     memoryArray = []
-    with open('/home/parallels/git/MQP-boat/src/navigation/scripts/memory.txt', 'r') as f:
+    with open('/home/jack/MQP-boat/src/navigation/scripts/memory.txt', 'r') as f:
       # Read all the lines into a list
       lines = f.readlines()
     for line in lines:
@@ -258,9 +258,9 @@ def in_middle_quad(x_pos, y_pos):
 
 
 def write_memory(state, no_nets, pickups):
-  os.remove("/home/parallels/git/MQP-boat/src/navigation/scripts/memory.txt")
+  os.remove("/home/jack/MQP-boat/src/navigation/scripts/memory.txt")
   # rewrite the memoru for the nect iteration
-  with open("/home/parallels/git/MQP-boat/src/navigation/scripts/memory.txt", 'w') as f:
+  with open("/home/jack/MQP-boat/src/navigation/scripts/memory.txt", 'w') as f:
     f.write('STATE = ' + state + '\n')
     f.write('NONE = ' + str(no_nets) + '\n')
     f.write('PICKUP = ' + str(pickups) + '\n')

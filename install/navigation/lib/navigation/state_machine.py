@@ -123,7 +123,7 @@ class state_machine(Node):
         newPickup = int(memoryArray[2]) + 1
         write_memory("PICKUP", 0, newPickup)
         self.move_motors(0, 0)
-        self.move_belt(20)
+        self.move_belt(2)
       else:
         write_memory("SEARCHING", 0, 0)
         self.move_belt(0)

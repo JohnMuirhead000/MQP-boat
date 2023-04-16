@@ -16,6 +16,8 @@ from std_msgs.msg import MultiArrayLayout
 import time
 
 #MAX_SPEED 100
+THRUSTER_SPEED = 2
+MOTOR_SPEED = 2
 
 class remote_control(Node):
     def __init__(self): 
@@ -25,25 +27,31 @@ class remote_control(Node):
         while True:
 
             last_command = input()
+            #send values to thruster
             if last_command == 'w':
-                self.send_val(10, 10)
+                self.send_val(THRUSTER_SPEED, THRUSTER_SPEED)
             elif last_command  == 'a':
-                self.send_val(10, 0)
+                self.send_val(0, THRUSTER_SPEED)
             elif last_command == 'd':
-                self.send_val(0, 10)
-            else:
-                self.send_val(0, 0)
-
-            if last_command == 't':
+                self.send_val(THRUSTER_SPEED, 0)
+            
+            #Turn on Belt
+            elif last_command == 't':
                 start_time = time.time()
                 while (time.time() - start_time) < 10:
                     self.send_val(0, 0)
                     # Do something in the loop for 10 seconds
-                    self.send_to_motor()
+                    self.send_to_motor(MOTOR_SPEED)
+                    time.sleep(1)
+
+                self.send_to_motor(0) #stop belt
+            else:
+                self.send_val(0, 0)  
+                self.send_to_motor(0)  
 
 
 
-    
+    # send to thruster
     def send_val(self, left, right):
 
         data = [float(left), float(right)]
@@ -61,14 +69,15 @@ class remote_control(Node):
         float32MultiArray = Float32MultiArray()
         float32MultiArray.data = data
         float32MultiArray.layout = multiArrayLayout
-
+        #print("sending thruster " = str(float32MultiArray))
         #publiish motor stuff
         self.pub_move.publish(float32MultiArray)
 
-    def send_to_motor(self):
-        print("power the motor with 10% ")
+    def send_to_motor(self, val):
+        
         float32 = Float32()
-        float32.data = float(10)
+        float32.data = float(val)
+        print("sending motor " + str(float32))
         self.pub_belt.publish(float32)
 
 

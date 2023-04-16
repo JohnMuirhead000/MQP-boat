@@ -88,7 +88,13 @@ class motor_action(Node):
     print("just sent the right array to the arduino!")
   
   def run_belt_motor(self, speed):
-    message = int(str(2) + '0' + '0' + str(speed))
+
+    if len(str(speed)) == 1:
+      add_buf = "0"
+    else:
+      add_buf = ""
+
+    message = int(str(2) + '0' + '0' + add_buf + str(speed))
     print("the message is " + str(message))
     self.ser.write(message.to_bytes(2, byteorder='big'))
     print("just sent the belt control to the ARDUINO")

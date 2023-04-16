@@ -14,42 +14,39 @@ from std_msgs.msg import Float32MultiArray
 from std_msgs.msg import MultiArrayDimension
 from std_msgs.msg import MultiArrayLayout
 import time
-import msvcrt
 
 #MAX_SPEED 100
 
 class remote_control(Node):
-  def __init__(self):
-    
-    super().__init__('remote_control')
-    self.pub_move = self.create_publisher(Float32MultiArray, 'impeler_move', 10)
-    self.pub_belt = self.create_publisher(Float32, 'belt_move', 10)
+    def __init__(self): 
+        super().__init__('remote_control')
+        self.pub_move = self.create_publisher(Float32MultiArray, 'impeler_move', 10)
+        self.pub_belt = self.create_publisher(Float32, 'belt_move', 10)
+        while True:
 
-    while True:
-        if msvcrt.kbhit():
-            key = msvcrt.getch()
-            print(key)
-            break
-    #while True:
-        # if keyboard.is_pressed('a') and keyboard.is_pressed('d'):
-        #     self.send_val(10, 10)
-        # elif keyboard.is_pressed('a'):
-        #     self.send_val(10, 0)
-        # elif keyboard.is_pressed('d'):
-        #     self.send_val(0, 10)
-        # else:
-        #     self.send_val(0, 0)
+            last_command = input()
+            if last_command == 'w':
+                self.send_val(10, 10)
+            elif last_command  == 'a':
+                self.send_val(10, 0)
+            elif last_command == 'd':
+                self.send_val(0, 10)
+            else:
+                self.send_val(0, 0)
 
-        # if keyboard.is_pressed('t'):
-        #     start_time = time.time()
-        #     while (time.time() - start_time) < 10:
-        #         self.send_val(0, 0)
-        #         # Do something in the loop for 10 seconds
-        #         self.send_to_motor()
+            if last_command == 't':
+                start_time = time.time()
+                while (time.time() - start_time) < 10:
+                    self.send_val(0, 0)
+                    # Do something in the loop for 10 seconds
+                    self.send_to_motor()
+
+
+
     
     def send_val(self, left, right):
-        print("write to the motor subscriber")
-        data = [left, right]
+
+        data = [float(left), float(right)]
         multiArrayLayout = MultiArrayLayout()
 
         multiArrayDimension  = MultiArrayDimension()

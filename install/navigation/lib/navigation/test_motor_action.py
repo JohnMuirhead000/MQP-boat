@@ -47,11 +47,11 @@ class test_motor_action(Node):
       #publiish motor stuff
       self.pub_move.publish(float32MultiArray)
 
-      #make the array for the propellers
-      float32 = Float32()
-      float32.data = float(belt)
+      # #make the array for the propellers
+      # float32 = Float32()
+      # float32.data = float(belt)
 
-      self.pub_belt.publish(float32)
+      # self.pub_belt.publish(float32)
 
 
   

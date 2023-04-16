@@ -1,22 +1,15 @@
 import torch
-import argparse
+import torchvision.models as models
 
-parser = argparse.ArgumentParser(description='Convert PyTorch .pt model file to .onnx format.')
-parser.add_argument('input_file', type=str, help='Path to input .pt model file')
-parser.add_argument('output_file', type=str, help='Path to output .onnx model file')
-args = parser.parse_args()
+# Load a PyTorch model
+model = models.resnet18(pretrained=True)
+input_shape = (1, 3, 224, 224)  # input shape of the model
 
-# Load the PyTorch model from the .pt file
-
-model = torch.load('my_model.pt')
-for module in model.modules():
-
-# Set the input shape (if known)
-input_shape = (1, 3, 224, 224)  # example input shape for image classification model
-# Replace with your own input shape or set to None if unknown
-
-# Export the model to ONNX format
-dummy_input = torch.randn(input_shape, requires_grad=True)
-torch.onnx.export(model, dummy_input, args.output_file, verbose=True)
-
+# Export the PyTorch model to ONNX format and save to file
+output_file = "new_best.onnx"  # output file path and name
+torch.onnx.export(model, torch.randn(input_shape), output_file,
+                  opset_version=11,
+                  input_names=["input"],
+                  output_names=["output"],
+                  dynamic_axes={"input": {0: "batch_size"}, "output": {0: "batch_size"}})
 

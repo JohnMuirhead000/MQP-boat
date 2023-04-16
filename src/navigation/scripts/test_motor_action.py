@@ -21,6 +21,7 @@ class test_motor_action(Node):
     
     super().__init__('test_motor_action')
     self.pub_move = self.create_publisher(Float32MultiArray, 'impeler_move', 10)
+    self.pub_belt = self.create_publisher(Float32, 'belt_move', 10)
 
     while True:
       left = float(input("left motor test val =  "))
@@ -45,6 +46,12 @@ class test_motor_action(Node):
 
       #publiish motor stuff
       self.pub_move.publish(float32MultiArray)
+
+      # #make the array for the propellers
+      # float32 = Float32()
+      # float32.data = float(belt)
+
+      # self.pub_belt.publish(float32)
 
 
   

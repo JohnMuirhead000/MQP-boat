@@ -12,8 +12,8 @@ import os
 import math
 
 LEFT = 0
-RIGHT = 480
-BOTTOM = 640
+RIGHT = 640
+BOTTOM = 480
 TOP = 0
 
 class state_machine(Node):

@@ -12,8 +12,8 @@ import os
 import math
 
 LEFT = 0
-RIGHT = 640
-BOTTOM = 480
+RIGHT = 480
+BOTTOM = 640
 TOP = 0
 
 class state_machine(Node):
@@ -181,7 +181,7 @@ def move_logic(x_pos, y_pos):
 
     if in_middle_quad(x_pos, y_pos):
       # are int the middle slice
-      y_from_line = abs(y_pos - BOTTOM*.75)
+      y_from_line = abs(y_pos - BOTTOM*.9)
       print("IN THE MIDDLE QUADD")
       max_y = BOTTOM*.9
       return ([int((100*y_from_line) / max_y), int((100*y_from_line) / max_y)])   
@@ -238,9 +238,8 @@ def move_logic(x_pos, y_pos):
 
 def in_middle_quad(x_pos, y_pos):
 
-  reflection_angle = 10
+  reflection_angle = 35
   in_radians = math.radians(reflection_angle)
-  print("in randians = " + str(in_radians))
 
   orig_x = RIGHT/2
   orig_y = BOTTOM*.9

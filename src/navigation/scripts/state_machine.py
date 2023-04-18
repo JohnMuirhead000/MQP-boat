@@ -82,7 +82,7 @@ class state_machine(Node):
         # we still have not found a net
         no_net_count = int(memoryArray[1]) + 1
         write_memory('SEARCHING', no_net_count, 0)
-        self.move_motors(float(50), float(0))
+        self.move_motors(float(20), float(0))
       else:
         write_memory('MOVE', 0, 0)
 
@@ -181,7 +181,7 @@ def move_logic(x_pos, y_pos):
 
     if in_middle_quad(x_pos, y_pos):
       # are int the middle slice
-      y_from_line = abs(y_pos - BOTTOM*.75)
+      y_from_line = abs(y_pos - BOTTOM*.9)
       print("IN THE MIDDLE QUADD")
       max_y = BOTTOM*.9
       return ([int((100*y_from_line) / max_y), int((100*y_from_line) / max_y)])   

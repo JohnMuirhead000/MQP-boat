@@ -21,8 +21,8 @@ from blob_detector  import *
 
 # Constants
 CONFIDENCE_INTERVAL = 0.25
-FRAME_HEIGHT = 640
-FRAME_WIDTH = 480
+FRAME_HEIGHT = 480
+FRAME_WIDTH = 640
 
 CLASS_LIST = ["net", "person", "wall", "divider"]
 

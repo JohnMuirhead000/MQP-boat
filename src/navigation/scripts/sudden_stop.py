@@ -18,7 +18,8 @@ class sudden_stop(Node):
 
         while (True):
             self.send_val(0, 0)
-            self.send_to_motor()
+            self.send_to_motor(0)
+
     def send_val(self, left, right):
 
         data = [float(left), float(right)]
@@ -40,10 +41,10 @@ class sudden_stop(Node):
         #publiish motor stuff
         self.pub_move.publish(float32MultiArray)
 
-    def send_to_motor(self):
+    def send_to_motor(self, val):
         print("power the motor with 0% ")
         float32 = Float32()
-        float32.data = float(0)
+        float32.data = float(val)
         self.pub_belt.publish(float32)
 
 

@@ -69,11 +69,8 @@ class remote_control(Node):
         float32MultiArray = Float32MultiArray()
         float32MultiArray.data = data
         float32MultiArray.layout = multiArrayLayout
-<<<<<<< HEAD
-=======
-        #print("sending thruster " = str(float32MultiArray))
->>>>>>> 628f29e8f5851ee93109502f14aee760618979fe
         #publiish motor stuff
+        print("about to PUB")
         self.pub_move.publish(float32MultiArray)
 
     def send_to_motor(self, val):

@@ -20,17 +20,7 @@ import sys
 
 #Arduino stuff
 BAUD_RATE = 9600
-
 COM_PORT = '/dev/ttyACM0'
-MAX_SPEED = 100
-MAX_DRIVE_MOTOR = 1000
-MAX_BELT_MOTOR = 1000
-
-LEFT = 0
-RIGHT = 640
-BOTTOM = 0
-TOP = 400
-
 
 class motor_action(Node):
   def __init__(self):

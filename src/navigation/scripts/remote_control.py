@@ -70,6 +70,7 @@ class remote_control(Node):
         float32MultiArray.data = data
         float32MultiArray.layout = multiArrayLayout
         #publiish motor stuff
+        print("about to PUB")
         self.pub_move.publish(float32MultiArray)
 
     def send_to_motor(self, val):

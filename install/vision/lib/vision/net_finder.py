@@ -20,7 +20,7 @@ from blob_detector  import *
 
 
 # Constants
-CONFIDENCE_INTERVAL = 0.25
+CONFIDENCE_INTERVAL = 0.15
 FRAME_HEIGHT = 480
 FRAME_WIDTH = 640
 
@@ -123,6 +123,7 @@ class find_net(Node):
             self.pub_image.publish(self.bridge.cv2_to_imgmsg(cv_image))
             return  self.net_point
         else:
+            self.pub_image.publish(image)
             #print(f'No Nets found')
             self.net_point.x = float(0)
             self.net_point.y = float(0)

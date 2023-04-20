@@ -15,6 +15,8 @@ LEFT = 0
 RIGHT = 640
 BOTTOM = 480
 TOP = 0
+BOTTOM_THREASHOLD = .75
+PATH = '/home/jack/MQP-boat/src/navigation/scripts/memory.txt'
 
 class state_machine(Node):
   def __init__(self):
@@ -28,7 +30,8 @@ class state_machine(Node):
     # step 1, set the STATE variblae according to the memory:
 
     memoryArray = []
-    with open('/home/jack/MQP-boat/src/navigation/scripts/memory.txt', 'r') as f:
+    with open(PATH, 'r') as f:
+    #with open('/home/jack/MQP-boat/src/navigation/scripts/memory.txt', 'r') as f:
       # Read all the lines into a list
       lines = f.readlines()
     for line in lines:
@@ -82,7 +85,7 @@ class state_machine(Node):
         # we still have not found a net
         no_net_count = int(memoryArray[1]) + 1
         write_memory('SEARCHING', no_net_count, 0)
-        self.move_motors(float(20), float(0))
+        self.move_motors(float(5), float(5))
       else:
         write_memory('MOVE', 0, 0)
 
@@ -94,7 +97,7 @@ class state_machine(Node):
 
         no_net_count = int(memoryArray[1]) + 1
 
-        if no_net_count > 20:
+        if no_net_count > 4:
           # in here if we have not seen a net for 10 seconds
           write_memory("SEARCHING", no_net_count, 0)
         else:
@@ -156,7 +159,7 @@ class state_machine(Node):
 
 # this function takes in the x pos and the y pose and detemrines if we are in the correct place to pick up the NET
 def activate_belt(x_pos, y_pos):
-  return y_pos >= BOTTOM*.9 and x_pos >= RIGHT * .35 and x_pos <= RIGHT * .65
+  return y_pos >= BOTTOM*BOTTOM_THREASHOLD and x_pos >= RIGHT * .35 and x_pos <= RIGHT * .65
 
 
 # this function assumes a net has been found and assumes we are not using the belt rn
@@ -165,7 +168,7 @@ def move_logic(x_pos, y_pos):
   print("ACTIVATINF MOVE LOGIX")
 
   # check if we are close
-  if y_pos >= BOTTOM * .9:
+  if y_pos >= BOTTOM * BOTTOM_THREASHOLD:
     print("IN THE CORNER")
     if x_pos < RIGHT * .35:
       # net in bottom left of screen; just move right side 
@@ -181,20 +184,20 @@ def move_logic(x_pos, y_pos):
 
     if in_middle_quad(x_pos, y_pos):
       # are int the middle slice
-      y_from_line = abs(y_pos - BOTTOM*.9)
+      y_from_line = abs(y_pos - BOTTOM*BOTTOM_THREASHOLD)
       print("IN THE MIDDLE QUADD")
-      max_y = BOTTOM*.9
+      max_y = BOTTOM*BOTTOM_THREASHOLD
       return ([int((100*y_from_line) / max_y), int((100*y_from_line) / max_y)])   
 
     # we are in the left or right quadrat
     orig_x = RIGHT/2
-    orig_y = BOTTOM*.9
+    orig_y = BOTTOM*BOTTOM_THREASHOLD
 
     x_from_orig = abs(x_pos - orig_x)
     y_from_orig = abs(y_pos - orig_y)
 
     x_percent_error = int((100 * x_from_orig) / (RIGHT * .5))
-    y_percent_error = int((100 * y_from_orig) / (BOTTOM * .9))
+    y_percent_error = int((100 * y_from_orig) / (BOTTOM * BOTTOM_THREASHOLD))
 
     max_distance = math.sqrt(orig_x * orig_x + orig_y * orig_y)
 
@@ -242,7 +245,7 @@ def in_middle_quad(x_pos, y_pos):
   in_radians = math.radians(reflection_angle)
 
   orig_x = RIGHT/2
-  orig_y = BOTTOM*.9
+  orig_y = BOTTOM*BOTTOM_THREASHOLD
 
   
 
@@ -257,9 +260,9 @@ def in_middle_quad(x_pos, y_pos):
 
 
 def write_memory(state, no_nets, pickups):
-  os.remove("/home/jack/MQP-boat/src/navigation/scripts/memory.txt")
+  os.remove(PATH)
   # rewrite the memoru for the nect iteration
-  with open("/home/jack/MQP-boat/src/navigation/scripts/memory.txt", 'w') as f:
+  with open(PATH, 'w') as f:
     f.write('STATE = ' + state + '\n')
     f.write('NONE = ' + str(no_nets) + '\n')
     f.write('PICKUP = ' + str(pickups) + '\n')
